@@ -1,0 +1,669 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>梯度下降 · 大数据技术与算法Checklist</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="powerlee">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-new/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-comments-footer/comment.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="LinearRegression.md" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="GradientDescent.html">
+            
+                <a href="GradientDescent.html">
+            
+                    
+                    梯度下降
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="LinearRegression.md">
+            
+                <span>
+            
+                    
+                    线性回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="LogisticRegression.md">
+            
+                <span>
+            
+                    
+                    逻辑回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="GradientDescentAdvance.md">
+            
+                <span>
+            
+                    
+                    梯度下降进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="HypothesisTesting.md">
+            
+                <span>
+            
+                    
+                    A/B实验原理：假设检验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="ABTest.html">
+            
+                <a href="ABTest.html">
+            
+                    
+                    A/B实验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="TimeSeries.html">
+            
+                <a href="TimeSeries.html">
+            
+                    
+                    时间序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="SQLKeypoints.html">
+            
+                <a href="SQLKeypoints.html">
+            
+                    
+                    SQL要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="SQLCases.html">
+            
+                <a href="SQLCases.html">
+            
+                    
+                    SQL案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    附录
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="ProbabilityAndStatistics.html">
+            
+                <a href="ProbabilityAndStatistics.html">
+            
+                    
+                    概率论与数理统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="GitCheatSheet.html">
+            
+                <a href="GitCheatSheet.html">
+            
+                    
+                    Git Cheat Sheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="MarkdownReference.html">
+            
+                <a href="MarkdownReference.html">
+            
+                    
+                    Markdown Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >梯度下降</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;">&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;</h1>
+<p>&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4E2D;&#x7528;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x6765;&#x4F18;&#x5316;&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF0C;&#x8BD5;&#x56FE;&#x6C42;&#x89E3;&#x635F;&#x5931;&#x51FD;&#x6570;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x4EE5;&#x53CA;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x53C2;&#x6570;&#x3002;&#x8981;&#x641E;&#x6E05;&#x695A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x7684;&#x6982;&#x5FF5;&#x5F15;&#x5165;&#x3002;</p>
+<h3 id="&#x65B9;&#x5411;&#x5BFC;&#x6570;">&#x65B9;&#x5411;&#x5BFC;&#x6570;</h3>
+<p>&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x5C31;&#x662F;&#x66F2;&#x9762;&#x5207;&#x7EBF;&#x7684;&#x659C;&#x7387;&#x3002;&#x66F2;&#x9762;&#x7684;&#x5207;&#x7EBF;&#x4E0D;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>36</mn><msup><mn>0</mn><mo lspace="0em" rspace="0em">&#x2218;</mo></msup></mrow><annotation encoding="application/x-tex">360^{\circ}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6741em;"></span><span class="mord">36</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2218;</span></span></span></span></span></span></span></span></span></span></span></span> &#x5404;&#x4E2A;&#x65B9;&#x5411;&#x90FD;&#x6709;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x540C;&#x65B9;&#x5411;&#x7684;&#x5207;&#x7EBF;&#x659C;&#x7387;&#x4E5F;&#x4E0D;&#x4E00;&#x5B9A;&#x76F8;&#x540C;&#xFF0C;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x4E5F;&#x4E0D;&#x662F;&#x552F;&#x4E00;&#x7684;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#x4E8C;&#x5143;&#x51FD;&#x6570; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x,y)=x^2+y^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> &#x7684;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x5982;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="pics/GradientDescent/image-20221120183116011.png" alt="image-20221120183116011" style="zoom:25%;"><img src="pics/GradientDescent/image-20221120185111493.png" alt="image-20221120185111493" style="zoom:26%;"></p>
+<p>&#x51FD;&#x6570; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> &#x5728; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> &#x70B9;&#x6CBF;&#x7740;&#x5207;&#x7EBF; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span> &#x65B9;&#x5411;&#x7684;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x4E3A;&#xFF1A;
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munder><mrow><mi>lim</mi><mo>&#x2061;</mo></mrow><mrow><mi>&#x3C1;</mi><mo>&#x2192;</mo><mn>0</mn></mrow></munder><mfrac><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi mathvariant="normal">&#x394;</mi><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>+</mo><mi mathvariant="normal">&#x394;</mi><mi>y</mi><mo stretchy="false">)</mo><mo>&#x2212;</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mi>&#x3C1;</mi></mfrac></mrow><annotation encoding="application/x-tex">
+{\lim_{\rho\to0}\frac{f(x+\Delta x, y+\Delta y)-f(x,y)}{\rho}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.3074em;vertical-align:-0.8804em;"></span><span class="mord"><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-2.3829em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">&#x3C1;</span><span class="mrel mtight">&#x2192;</span><span class="mord mtight">0</span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop">lim</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.8532em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">&#x3C1;</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">&#x394;</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">&#x394;</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span>
+&#x5176;&#x4E2D; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3C1;</mi><mo>=</mo><msqrt><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">&#x394;</mi><mi>x</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mi mathvariant="normal">&#x394;</mi><mi>y</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">\rho=\sqrt{(\Delta x)^2+(\Delta y)^2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">&#x3C1;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.305em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.935em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mopen">(</span><span class="mord">&#x394;</span><span class="mord mathnormal">x</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord">&#x394;</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.895em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewbox="0 0 400000 1296" preserveaspectratio="xMinYMin slice"><path d="M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.305em;"><span></span></span></span></span></span></span></span></span> &#x3002;&#x628A;&#x8BE5;&#x6781;&#x9650;&#x8BB0;&#x4F5C;&#x65B9;&#x5411;&#x5BFC;&#x6570; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>l</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\partial f}{\partial l}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2772em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4461em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> &#x3002;&#x5176;&#x8BA1;&#x7B97;&#x516C;&#x5F0F;&#x4E3A;&#xFF1A;
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>l</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>x</mi></mrow></mfrac><mi>c</mi><mi>o</mi><mi>s</mi><mi>&#x3C6;</mi><mo>+</mo><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>y</mi></mrow></mfrac><mi>s</mi><mi>i</mi><mi>n</mi><mi>&#x3C6;</mi></mrow><annotation encoding="application/x-tex">
+\frac{\partial f}{\partial l} = \frac{\partial f}{\partial x}cos\varphi + \frac{\partial f}{\partial y}sin\varphi
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal">x</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal">cos</span><span class="mord mathnormal">&#x3C6;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.2519em;vertical-align:-0.8804em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mord mathnormal">&#x3C6;</span></span></span></span></span>
+&#x5176;&#x4E2D; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3C6;</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">&#x3C6;</span></span></span></span> &#x4E3A;x&#x8F74;&#x6B63;&#x65B9;&#x5411;&#x5230; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span> &#x7684;&#x89D2;&#x5EA6;&#x3002;</p>
+<h3 id="&#x68AF;&#x5EA6;">&#x68AF;&#x5EA6;</h3>
+<p>&#x68AF;&#x5EA6;&#x662F;&#x4E2A;&#x5411;&#x91CF;&#xFF0C;&#x5B83;&#x7684;&#x6A21;&#x4E3A;&#x66F2;&#x9762;&#x4E0A;&#x8BE5;&#x70B9;&#x53D6;&#x503C;&#x6700;&#x5927;&#x7684;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x7684;&#x503C;&#xFF0C;&#x65B9;&#x5411;&#x4E3A;&#x6700;&#x5927;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x5BF9;&#x5E94;&#x7684;&#x5207;&#x7EBF;&#x7684;&#x6295;&#x5F71;&#x65B9;&#x5411;&#x3002;&#x4E5F;&#x662F;&#x8BE5;&#x70B9;&#x6240;&#x5904;&#x7684;&#x7B49;&#x9AD8;&#x7EBF;&#x7684;&#x6CD5;&#x5411;&#x91CF;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x51FD;&#x6570;&#x503C;&#x53D8;&#x5316;&#x6700;&#x5FEB;&#x7684;&#x65B9;&#x5411;&#x3002;</p>
+<blockquote>
+<p>[!NOTE]
+&#x68AF;&#x5EA6;&#x7684;&#x65B9;&#x5411;&#x5E76;&#x4E0D;&#x662F;&#x6700;&#x5927;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x5BF9;&#x5E94;&#x7684;&#x5207;&#x7EBF;&#x65B9;&#x5411;&#xFF0C;&#x800C;&#x662F;&#x5207;&#x7EBF;&#x7684;&#x6295;&#x5F71;&#x65B9;&#x5411;&#x3002;&#x4F46;&#x5373;&#x4F7F;&#x8BA4;&#x4E3A;&#x662F;&#x5207;&#x7EBF;&#x65B9;&#x5411;&#xFF0C;&#x5BF9;&#x7406;&#x89E3;&#x68AF;&#x5EA6;&#x7684;&#x6982;&#x5FF5;&#x4E5F;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x592A;&#x5927;&#x7684;&#x5F71;&#x54CD;&#x3002;</p>
+</blockquote>
+<p>&#x56FE;&#x4E2D;&#x7EFF;&#x8272;&#x7BAD;&#x5934;&#x6240;&#x793A;&#x5411;&#x91CF;&#x5373;&#x4E3A;&#x68AF;&#x5EA6;&#xFF1A;</p>
+<p><img src="pics/GradientDescent/image-20221120174356259.png" alt="image-20221120174356259" style="zoom:20%;"><img src="pics/GradientDescent/image-20221120174806765.png" alt="image-20221120174806765" style="zoom:20%;"></p>
+<p>&#x5BF9;&#x4E8E;&#x4E8C;&#x5143;&#x51FD;&#x6570; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> &#xFF0C;&#x5176;&#x66F2;&#x9762;&#x4E0A;&#x4EFB;&#x610F;&#x70B9; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> &#x7684;&#x68AF;&#x5EA6;&#xFF0C;&#x8BB0;&#x4F5C; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mi>r</mi><mi>a</mi><mi>d</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">gradf(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.10764em;">df</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> &#x6216; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\nabla f(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> &#xFF0C;&#x5B9A;&#x4E49;&#x4E3A;&#xFF1A;
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>x</mi></mrow></mfrac><mo separator="true">,</mo><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>y</mi></mrow></mfrac><mo stretchy="false">)</mo><mo>=</mo><msub><mi>f</mi><mi>x</mi></msub><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mover accent="true"><mi>i</mi><mo>&#x20D7;</mo></mover><mo>+</mo><msub><mi>f</mi><mi>y</mi></msub><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mover accent="true"><mi>j</mi><mo>&#x20D7;</mo></mover></mrow><annotation encoding="application/x-tex">
+\nabla f(x,y)=(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y})=f_x(x,y)\vec i+f_y(x,y)\vec j
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.2519em;vertical-align:-0.8804em;"></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal">x</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1925em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9425em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">i</span></span><span style="top:-3.2285em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.2286em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9425em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span><span style="top:-3.2285em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span></span></span></span></span>
+&#x4ECD;&#x7136;&#x4EE5;&#x4E8C;&#x5143;&#x51FD;&#x6570; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x,y)=x^2+y^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> &#x4E3A;&#x4F8B;&#x3002;&#x8BBE; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>e</mi><mo>&#x20D7;</mo></mover><mo>=</mo><mo stretchy="false">(</mo><mi>c</mi><mi>o</mi><mi>s</mi><mi>&#x3C6;</mi><mo separator="true">,</mo><mi>s</mi><mi>i</mi><mi>n</mi><mi>&#x3C6;</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\vec e=(cos\varphi, sin\varphi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.714em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">e</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">cos</span><span class="mord mathnormal">&#x3C6;</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mord mathnormal">&#x3C6;</span><span class="mclose">)</span></span></span></span> &#x4E3A;&#x66F2;&#x9762;&#x67D0;&#x70B9;&#x5207;&#x7EBF; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span> &#x65B9;&#x5411;&#x5BFC;&#x6570;&#x6240;&#x5BF9;&#x5E94;&#x65B9;&#x5411;&#x7684;&#x5355;&#x4F4D;&#x5411;&#x91CF;&#xFF0C;&#x5219;&#x8BE5;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x4E3A;&#xFF1A;
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>l</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>x</mi></mrow></mfrac><mi>c</mi><mi>o</mi><mi>s</mi><mi>&#x3C6;</mi><mo>+</mo><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>y</mi></mrow></mfrac><mi>s</mi><mi>i</mi><mi>n</mi><mi>&#x3C6;</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mo stretchy="false">(</mo><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>x</mi></mrow></mfrac><mo separator="true">,</mo><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>y</mi></mrow></mfrac><mo stretchy="false">)</mo><mo>&#x22C5;</mo><mo stretchy="false">(</mo><mi>c</mi><mi>o</mi><mi>s</mi><mi>&#x3C6;</mi><mo separator="true">,</mo><mi>s</mi><mi>i</mi><mi>n</mi><mi>&#x3C6;</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi mathvariant="normal">&#x2223;</mi><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mi mathvariant="normal">&#x2223;</mi><mo>&#x22C5;</mo><mi mathvariant="normal">&#x2223;</mi><mover accent="true"><mi>e</mi><mo>&#x20D7;</mo></mover><mi mathvariant="normal">&#x2223;</mi><mo>&#x22C5;</mo><mi>c</mi><mi>o</mi><mi>s</mi><mo stretchy="false">&#x27E8;</mo><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mover accent="true"><mi>e</mi><mo>&#x20D7;</mo></mover><mo stretchy="false">&#x27E9;</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi mathvariant="normal">&#x2223;</mi><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mi mathvariant="normal">&#x2223;</mi><mo>&#x22C5;</mo><mn>1</mn><mo>&#x22C5;</mo><mi>c</mi><mi>o</mi><mi>s</mi><mo stretchy="false">&#x27E8;</mo><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mover accent="true"><mi>e</mi><mo>&#x20D7;</mo></mover><mo stretchy="false">&#x27E9;</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align*}
+\frac{\partial f}{\partial l}
+=\frac{\partial f}{\partial x}cos\varphi + \frac{\partial f}{\partial y}sin\varphi
+&amp;=(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y})\cdot(cos\varphi, sin\varphi) \\
+&amp;=|\nabla f(x,y)|\cdot |\vec e| \cdot cos\langle\nabla f(x,y),\vec e\rangle \\
+&amp;=|\nabla f(x,y)|\cdot 1 \cdot cos\langle\nabla f(x,y),\vec e\rangle
+\end{align*}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:5.5519em;vertical-align:-2.5259em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.0259em;"><span style="top:-5.0259em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal">x</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal">cos</span><span class="mord mathnormal">&#x3C6;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mord mathnormal">&#x3C6;</span></span></span><span style="top:-3.0055em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"></span></span><span style="top:-1.5055em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:2.5259em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.0259em;"><span style="top:-5.0259em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal">x</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord mathnormal">cos</span><span class="mord mathnormal">&#x3C6;</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mord mathnormal">&#x3C6;</span><span class="mclose">)</span></span></span><span style="top:-3.0055em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">&#x2223;&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord">&#x2223;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">&#x2223;</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">e</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mord">&#x2223;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">cos</span><span class="mopen">&#x27E8;</span><span class="mord">&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">e</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mclose">&#x27E9;</span></span></span><span style="top:-1.5055em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">&#x2223;&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord">&#x2223;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">cos</span><span class="mopen">&#x27E8;</span><span class="mord">&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">e</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mclose">&#x27E9;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:2.5259em;"><span></span></span></span></span></span></span></span></span></span></span></span>
+&#x5176;&#x4E2D;&#xFF0C;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">&#x27E8;</mo><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mover accent="true"><mi>e</mi><mo>&#x20D7;</mo></mover><mo stretchy="false">&#x27E9;</mo></mrow><annotation encoding="application/x-tex">\langle\nabla f(x,y),\vec e\rangle</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">&#x27E8;</span><span class="mord">&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">e</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mclose">&#x27E9;</span></span></span></span> &#x4E3A; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\nabla f(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> &#x548C; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>e</mi><mo>&#x20D7;</mo></mover></mrow><annotation encoding="application/x-tex">\vec e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.714em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">e</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span></span></span></span> &#x7684;&#x5939;&#x89D2;&#x3002;&#x5F53; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>o</mi><mi>s</mi><mo stretchy="false">&#x27E8;</mo><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mover accent="true"><mi>e</mi><mo>&#x20D7;</mo></mover><mo stretchy="false">&#x27E9;</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">cos\langle\nabla f(x,y),\vec e\rangle=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">cos</span><span class="mopen">&#x27E8;</span><span class="mord">&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">e</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mclose">&#x27E9;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> &#x65F6;&#xFF0C;&#x65B9;&#x5411;&#x5BFC;&#x6570; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>l</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\partial f}{\partial l}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2772em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4461em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> &#x6709;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x4E3A;&#x68AF;&#x5EA6;&#x7684;&#x6A21; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">&#x2223;</mi><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mi mathvariant="normal">&#x2223;</mi></mrow><annotation encoding="application/x-tex">|\nabla f(x,y)|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">&#x2223;&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord">&#x2223;</span></span></span></span> &#xFF0C;&#x4E14;&#x6B64;&#x65F6; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>e</mi><mo>&#x20D7;</mo></mover></mrow><annotation encoding="application/x-tex">\vec e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.714em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">e</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewbox="0 0 471 714" preserveaspectratio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span></span></span></span> &#x7684;&#x65B9;&#x5411;&#x548C;&#x68AF;&#x5EA6; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">&#x2207;</mi><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\nabla f(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">&#x2207;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> &#x7684;&#x65B9;&#x5411;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</p>
+<h3 id="&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;">&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;</h3>
+<p>&#x4E3A;&#x6C42;&#x89E3;&#x51FD;&#x6570;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x4EE5;&#x53CA;&#x6700;&#x5C0F;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x5750;&#x6807;&#xFF0C;&#x6570;&#x5B66;&#x4E0A;&#x901A;&#x5E38;&#x8981;&#x4E48;&#x6709;&#x76F4;&#x63A5;&#x7684;&#x6C42;&#x89E3;&#x516C;&#x5F0F;&#x3002;&#x8981;&#x4E48;&#x5C31;&#x5BF9;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x6C42;&#x5BFC;&#xFF0C;&#x4EE4;&#x5BFC;&#x51FD;&#x6570;&#x7B49;&#x4E8E;0&#x8FDB;&#x884C;&#x6C42;&#x89E3;&#x3002;&#x4F46;&#x9762;&#x5BF9;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x8FD9;&#x7C7B;&#x573A;&#x666F;&#xFF0C;&#x5F80;&#x5F80;&#x6570;&#x636E;&#x91CF;&#x5927;&#x3001;&#x7EF4;&#x5EA6;&#x9AD8;&#x5BFC;&#x81F4;&#x8BA1;&#x7B97;&#x91CF;&#x8FC7;&#x5927;&#xFF0C;&#x6216;&#x8005;&#x76EE;&#x6807;&#x51FD;&#x6570;&#x590D;&#x6742;&#x672C;&#x8EAB;&#x65E0;&#x6CD5;&#x83B7;&#x5F97;&#x89E3;&#x6790;&#x89E3;&#x3002;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x5F80;&#x5F80;&#x5229;&#x7528;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x8FD9;&#x7C7B;&#x8FED;&#x4EE3;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x5FEB;&#x901F;&#x903C;&#x8FD1;&#x76EE;&#x6807;&#x51FD;&#x6570;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x4EE5;&#x83B7;&#x5F97;&#x6700;&#x4F18;&#x5316;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002;</p>
+<p>&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x7684;&#x4F5C;&#x7528;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x6C42;&#x89E3;&#x51FD;&#x6570;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x5728;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#x4E2D;&#xFF0C;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#x83B7;&#x53D6;&#x51FD;&#x6570;&#x6700;&#x5C0F;&#x503C;&#xFF08;&#x5C3D;&#x53EF;&#x80FD;&#x5C0F;&#xFF09;&#x65F6;&#x5BF9;&#x5E94;&#x7684;&#x5750;&#x6807;&#xFF0C;&#x5373;&#x6700;&#x4F18;&#x5316;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x503C;&#x3002;</p>
+<p>&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x7684;&#x539F;&#x7406;&#x662F;&#xFF1A;&#x8BD5;&#x56FE;&#x901A;&#x8FC7;&#x8FED;&#x4EE3;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6BCF;&#x6B65;&#x90FD;&#x6CBF;&#x7740;&#x51FD;&#x6570;&#x6570;&#x503C;&#x4E0B;&#x964D;&#x6700;&#x5FEB;&#x7684;&#x65B9;&#x5411;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x8D1F;&#x68AF;&#x5EA6;&#x65B9;&#x5411;&#xFF09;&#x8D70;&#x4E00;&#x5C0F;&#x6B65;&#x3002;&#x6BCF;&#x8D70;&#x4E00;&#x6B65;&#x90FD;&#x91CD;&#x65B0;&#x786E;&#x8BA4;&#x4E00;&#x4E0B;&#x8D1F;&#x68AF;&#x5EA6;&#x65B9;&#x5411;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6CBF;&#x7740;&#x8BE5;&#x65B9;&#x5411;&#x4E0B;&#x964D;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x51FD;&#x6570;&#x6700;&#x5C0F;&#x503C;&#x4EE5;&#x53CA;&#x5BF9;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>&#x4E4B;&#x6240;&#x4EE5;&#x6BCF;&#x6B65;&#x90FD;&#x6CBF;&#x7740;<strong>&#x8D1F;&#x68AF;&#x5EA6;&#x65B9;&#x5411;</strong>&#x8D70;&#x6709;&#x4E24;&#x4E2A;&#x539F;&#x56E0;&#xFF1A;</p>
+<ol>
+<li>&#x8D1F;&#x68AF;&#x5EA6;&#x65B9;&#x5411;&#x4E00;&#x5B9A;&#x662F;&#x4F1A;&#x8BA9;&#x51FD;&#x6570;&#x503C;&#x53D8;&#x5C0F;&#xFF08;&#x81F3;&#x5C11;&#x4E0D;&#x53D8;&#x5927;&#xFF09;&#x7684;&#x65B9;&#x5411;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;&#x8D70;&#x51FA;&#x4E86;&#x8FD9;&#x4E00;&#x6B65;&#x4E0D;&#x610F;&#x5473;&#x7740;&#x51FD;&#x6570;&#x503C;&#x5C31;&#x4E00;&#x5B9A;&#x4F1A;&#x53D8;&#x5C0F;&#xFF0C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x6B65;&#x5B50;&#x8FC8;&#x5927;&#x4E86;&#xFF0C;&#x51FD;&#x6570;&#x503C;&#x53CD;&#x800C;&#x6709;&#x6240;&#x53D8;&#x5927;&#x3002;</li>
+<li>&#x8D1F;&#x68AF;&#x5EA6;&#x662F;&#x51FD;&#x6570;&#x503C;&#x4E0B;&#x964D;&#x6700;&#x5FEB;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x4FBF;&#x4E8E;&#x66F4;&#x5FEB;&#x901F;&#x7684;&#x627E;&#x5230;&#x6700;&#x5C0F;&#x503C;&#x3002;&#x5176;&#x5B9E;&#xFF0C;&#x5373;&#x4F7F;&#x6BCF;&#x6B65;&#x4E0D;&#x662F;&#x6CBF;&#x7740;&#x8D1F;&#x68AF;&#x5EA6;&#x65B9;&#x5411;&#xFF0C;&#x53EA;&#x8981;&#x662F;&#x6CBF;&#x7740;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x503C;&#x53D8;&#x5C0F;&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x6700;&#x7EC8;&#x4E5F;&#x662F;&#x80FD;&#x627E;&#x5230;&#x51FD;&#x6570;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x7684;&#x3002;</li>
+</ol>
+</blockquote>
+<h4 id="&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;">&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;</h4>
+<p>&#x4ECD;&#x7136;&#x4EE5;&#x4E8C;&#x5143;&#x51FD;&#x6570; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x,y)=x^2+y^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> &#x4E3A;&#x4F8B;&#xFF0C;&#x5199;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x6C42;&#x89E3;&#x51FD;&#x6570;&#x6700;&#x5C0F;&#x503C;&#x3002;&#x4EE3;&#x7801;&#x5176;&#x5B9E;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5173;&#x952E;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x624B;&#x52A8;&#x628A;&#x51FD;&#x6570;&#x68AF;&#x5EA6;&#x5148;&#x6C42;&#x51FA;&#x6765;&#x3002;10&#x6B21;&#x8FED;&#x4EE3;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5DF2;&#x7ECF;&#x5F88;&#x63A5;&#x8FD1;&#x51FD;&#x6570;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x4E86;&#x3002;&#x5982;&#x679C;&#x518D;&#x591A;&#x8FED;&#x4EE3;&#x51E0;&#x6B21;&#x5C31;&#x80AF;&#x5B9A;&#x80FD;&#x8FBE;&#x5230;&#x6700;&#x5C0F;&#x503C;&#x3002;</p>
+<pre class="language-"><code class="lang-python"><span class="token comment"># &#x539F;&#x51FD;&#x6570;f(x,y)</span>
+<span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> x <span class="token operator">**</span> <span class="token number">2</span> <span class="token operator">+</span> y <span class="token operator">**</span> <span class="token number">2</span>
+
+<span class="token comment"># f(x,y)&#x5BF9;x&#x7684;&#x504F;&#x5BFC;</span>
+<span class="token keyword">def</span> <span class="token function">fx</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">2</span> <span class="token operator">*</span> x
+
+<span class="token comment"># f(x,y)&#x5BF9;y&#x7684;&#x504F;&#x5BFC;</span>
+<span class="token keyword">def</span> <span class="token function">fy</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token number">2</span> <span class="token operator">*</span> y
+</code></pre>
+<pre class="language-"><code class="lang-python"><span class="token comment"># &#x8BBE;&#x7F6E;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x8D77;&#x59CB;&#x70B9;</span>
+x<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span> y<span class="token operator">=</span><span class="token number">2</span>
+<span class="token comment"># &#x8BBE;&#x7F6E;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6B65;&#x957F;</span>
+step <span class="token operator">=</span> <span class="token number">0.1</span>
+
+<span class="token comment"># &#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x8FDB;&#x884C;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment"># &#x8BBE;&#x7F6E;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x4E3A;10</span>
+    before <span class="token operator">=</span> f<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>        <span class="token comment"># &#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x5F00;&#x59CB;&#x524D;&#xFF0C;&#x8D77;&#x59CB;&#x5750;&#x6807;&#x4E0B;&#x7684;&#x51FD;&#x6570;&#x503C;</span>
+    x <span class="token operator">=</span> x <span class="token operator">-</span> step <span class="token operator">*</span> fx<span class="token punctuation">(</span>x<span class="token punctuation">)</span>    <span class="token comment"># x&#x8F74;&#x65B9;&#x5411;&#x8FDB;&#x884C;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#xFF0C;&#x83B7;&#x5F97;&#x65B0;&#x7684;&#x65B0;&#x5750;&#x6807;</span>
+    y <span class="token operator">=</span> y <span class="token operator">-</span> step <span class="token operator">*</span> fy<span class="token punctuation">(</span>y<span class="token punctuation">)</span>    <span class="token comment"># y&#x8F74;&#x65B9;&#x5411;&#x8FDB;&#x884C;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#xFF0C;&#x83B7;&#x5F97;&#x65B0;&#x7684;y&#x5750;&#x6807;</span>
+    after <span class="token operator">=</span> f<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>         <span class="token comment"># &#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x5B8C;&#x6210;&#xFF0C;&#x57FA;&#x4E8E;&#x65B0;&#x5750;&#x6807;&#x7684;&#x51FD;&#x6570;&#x503C;</span>
+    theta <span class="token operator">=</span> before <span class="token operator">-</span> after  <span class="token comment"># &#x5B8C;&#x6210;&#x4E00;&#x6B21;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x8FED;&#x4EE3;&#xFF0C;&#x524D;&#x540E;&#x51FD;&#x6570;&#x503C;&#x7684;&#x5DEE;</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;before:{:.2f}, after:{:.2f}, theta:{:.2f}, x:{:.2f}, y:{:.2f}&quot;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>before<span class="token punctuation">,</span> after<span class="token punctuation">,</span> theta<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># &#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5E76;&#x4FDD;&#x7559;2&#x4E3A;&#x5C0F;&#x6570;</span>
+</code></pre>
+<pre class="language-"><code>before:8.00, after:5.12, theta:2.88, x:1.60, y:1.60
+before:5.12, after:3.28, theta:1.84, x:1.28, y:1.28
+before:3.28, after:2.10, theta:1.18, x:1.02, y:1.02
+before:2.10, after:1.34, theta:0.75, x:0.82, y:0.82
+before:1.34, after:0.86, theta:0.48, x:0.66, y:0.66
+before:0.86, after:0.55, theta:0.31, x:0.52, y:0.52
+before:0.55, after:0.35, theta:0.20, x:0.42, y:0.42
+before:0.35, after:0.23, theta:0.13, x:0.34, y:0.34
+before:0.23, after:0.14, theta:0.08, x:0.27, y:0.27
+before:0.14, after:0.09, theta:0.05, x:0.21, y:0.21
+</code></pre><h4 id="&#x5B9E;&#x9A8C;&#xFF1A;&#x7528;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x66FF;&#x4EE3;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;">&#x5B9E;&#x9A8C;&#xFF1A;&#x7528;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x66FF;&#x4EE3;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;</h4>
+<p>&#x5047;&#x8BBE;&#x7528;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x6765;&#x66FF;&#x4EE3;&#x68AF;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5176;&#x5B9E;&#x4E5F;&#x53EF;&#x4EE5;&#x8D77;&#x5230;&#x4E0B;&#x964D;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x53EA;&#x662F;&#x901F;&#x5EA6;&#x8981;&#x6162;&#x4E00;&#x4E9B;&#xFF0C;10&#x6B21;&#x8FED;&#x4EE3;&#x540E;&#x79BB;&#x6700;&#x5C0F;&#x503C;&#x8FD8;&#x6709;&#x70B9;&#x8DDD;&#x79BB;&#x3002;&#x5728;&#x771F;&#x5B9E;&#x7684;&#x5927;&#x6570;&#x636E;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x901F;&#x5EA6;&#x662F;&#x9700;&#x8981;&#x8003;&#x8651;&#x7684;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x70B9;&#x3002;&#x68AF;&#x5EA6;&#x4E0D;&#x4EC5;&#x4E0B;&#x964D;&#x5FEB;&#xFF0C;&#x6C42;&#x68AF;&#x5EA6;&#x4E5F;&#x6BD4;&#x6C42;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x3002;</p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> math
+
+<span class="token comment"># &#x8BBE;&#x7F6E;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x8D77;&#x59CB;&#x70B9;</span>
+x<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span> y<span class="token operator">=</span><span class="token number">2</span>
+<span class="token comment"># &#x8BBE;&#x7F6E;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6B65;&#x957F;</span>
+step <span class="token operator">=</span> <span class="token number">0.1</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment"># &#x8BBE;&#x7F6E;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x4E3A;10</span>
+    before <span class="token operator">=</span> f<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>        <span class="token comment"># &#x5F00;&#x59CB;&#x524D;&#xFF0C;&#x8D77;&#x59CB;&#x5750;&#x6807;&#x4E0B;&#x7684;&#x51FD;&#x6570;&#x503C;</span>
+    x <span class="token operator">=</span> x <span class="token operator">-</span> step <span class="token operator">*</span> fx<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>math<span class="token punctuation">.</span>pi<span class="token operator">/</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># &#x6CBF;&#x7740;&#x5207;&#x7EBF;&#x6295;&#x5F71;&#x4E0E;x&#x6210;60&#x5EA6;&#x89D2;&#x7684;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x8FDB;&#x884C;&#x4E0B;&#x964D;</span>
+    y <span class="token operator">=</span> y <span class="token operator">-</span> step <span class="token operator">*</span> fy<span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>math<span class="token punctuation">.</span>pi<span class="token operator">/</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># &#x6CBF;&#x7740;&#x5207;&#x7EBF;&#x6295;&#x5F71;&#x4E0E;x&#x6210;60&#x5EA6;&#x89D2;&#x7684;&#x65B9;&#x5411;&#x5BFC;&#x6570;&#x8FDB;&#x884C;&#x4E0B;&#x964D;</span>
+    after <span class="token operator">=</span> f<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>         <span class="token comment"># &#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x57FA;&#x4E8E;&#x65B0;&#x5750;&#x6807;&#x7684;&#x51FD;&#x6570;&#x503C;</span>
+    theta <span class="token operator">=</span> before <span class="token operator">-</span> after  <span class="token comment"># &#x5B8C;&#x6210;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#xFF0C;&#x524D;&#x540E;&#x51FD;&#x6570;&#x503C;&#x7684;&#x5DEE;</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;before:{:.2f}, after:{:.2f}, theta:{:.2f}, x:{:.2f}, y:{:.2f}&quot;</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>before<span class="token punctuation">,</span> after<span class="token punctuation">,</span> theta<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># &#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5E76;&#x4FDD;&#x7559;2&#x4E3A;&#x5C0F;&#x6570;</span>
+</code></pre>
+<pre class="language-"><code>before:8.00, after:5.97, theta:2.03, x:1.80, y:1.65
+before:5.97, after:4.49, theta:1.48, x:1.62, y:1.37
+before:4.49, after:3.40, theta:1.09, x:1.46, y:1.13
+before:3.40, after:2.60, theta:0.81, x:1.31, y:0.93
+before:2.60, after:1.99, theta:0.60, x:1.18, y:0.77
+before:1.99, after:1.54, theta:0.45, x:1.06, y:0.64
+before:1.54, after:1.19, theta:0.34, x:0.96, y:0.53
+before:1.19, after:0.93, theta:0.26, x:0.86, y:0.44
+before:0.93, after:0.73, theta:0.20, x:0.77, y:0.36
+before:0.73, after:0.58, theta:0.16, x:0.70, y:0.30
+</code></pre><div id="comment-wrapper" class="comment-wrapper clearfix">        <div class="comment-copyright">        <span class="title">Comments</span>        <span class="content">                Copyright &#xA9; powerAmore all right reserved, powered by                <a href="https://github.com/aleen42" target="_blank">aleen42</a>            </span>    </div>        <div class="modules"><div class="content-wrapper">    <div class="comment-list comment-wrapper f-dn">        <div class="empty-comments comment-item clearfix">Empty Comments</div>    </div>    <div class="editor-wrapper f-dn">        <div class="editor">        </div><!--        --><div>            <img class="user-avatar" src=".">            <i class="fa fa-sign-out" title="sign out" action="logout"></i>        </div>    </div>    <div class="auth-wrapper f-dn">        <div class="description">            <div class="title">Sign in <a href="https://github.com" target="_blank">GitHub</a></div>            <div class="content">                <p>As the plugin is integrated with a code management system like GitLab or GitHub, you may have to auth                    with your account before leaving comments around this article.</p>                <p>Notice: This plugin has used Cookie to store your token with an expiration.</p>            </div>        </div>        <div class="auth">            <button class="btn auth-btn">authorize</button>        </div>    </div></div></div>    <script type="text/javascript">        SYS_CONST = JSON.parse('{"redirect":"","clientId":"","repo":"powerAmore/DataSciChecklist","copyright":"Copyright © powerAmore","type":"github","host":"https://github.com","path":"GradientDescent.md"}');    </script></div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="LinearRegression.md" class="navigation navigation-next " aria-label="Next page: 线性回归">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"梯度下降","level":"1.2","depth":1,"next":{"title":"线性回归","level":"1.3","depth":1,"path":"LinearRegression.md","ref":"LinearRegression.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-code","-codeline","-highlight","prism","expandable-chapters","chapter-fold","splitter","back-to-top-button","advanced-emoji","hide-element","insert-logo","custom-favicon","pageview-count","-sharing","sharing-plus","flexible-alerts","katex-new","comments-footer","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{},"katex-new":{},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"pics/logo.ico","comments-footer":{"type":"github","repo":"powerAmore/DataSciChecklist","copyright":"Copyright © powerAmore"},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"all":["douban","facebook","google","twitter","weibo","qq","whatsapp"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"pics/logo.jpeg","style":"background: none; max-height: 30px; min-height: 30px"},"expandable-chapters":{}},"theme":"default","author":"powerlee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据技术与算法Checklist","language":"zh-hans","links":{},"gitbook":"*","description":"大数据技术与算法Checklist"},"file":{"path":"GradientDescent.md","mtime":"2022-12-10T11:06:47.200Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-10T13:03:56.637Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-comments-footer/comment.dist.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

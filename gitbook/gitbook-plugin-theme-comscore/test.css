@@ -1,0 +1,22 @@
+section  {
+    width:100%;
+}
+h1 {
+  color: #154360;
+}
+h2 {
+  color: #1A5276;
+}
+h3 {
+  color: #1F618D;
+}
+h4 {
+  color: #2471A3;
+}
+h5 {
+  color: #2980B9;
+}
+th {
+  background-color: #5499C7;
+  color: white;
+}

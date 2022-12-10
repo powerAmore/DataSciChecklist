@@ -1,0 +1,782 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>SQL案例 · 大数据技术与算法Checklist</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="powerlee">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-new/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-comments-footer/comment.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="SQLKeypoints.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="GradientDescent.html">
+            
+                <a href="GradientDescent.html">
+            
+                    
+                    梯度下降
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="LinearRegression.md">
+            
+                <span>
+            
+                    
+                    线性回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="LogisticRegression.md">
+            
+                <span>
+            
+                    
+                    逻辑回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="GradientDescentAdvance.md">
+            
+                <span>
+            
+                    
+                    梯度下降进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="HypothesisTesting.md">
+            
+                <span>
+            
+                    
+                    A/B实验原理：假设检验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="ABTest.html">
+            
+                <a href="ABTest.html">
+            
+                    
+                    A/B实验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="TimeSeries.html">
+            
+                <a href="TimeSeries.html">
+            
+                    
+                    时间序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="SQLKeypoints.html">
+            
+                <a href="SQLKeypoints.html">
+            
+                    
+                    SQL要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10" data-path="SQLCases.html">
+            
+                <a href="SQLCases.html">
+            
+                    
+                    SQL案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    附录
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="ProbabilityAndStatistics.html">
+            
+                <a href="ProbabilityAndStatistics.html">
+            
+                    
+                    概率论与数理统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="GitCheatSheet.html">
+            
+                <a href="GitCheatSheet.html">
+            
+                    
+                    Git Cheat Sheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="MarkdownReference.html">
+            
+                <a href="MarkdownReference.html">
+            
+                    
+                    Markdown Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >SQL案例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x5728;&#x4E92;&#x8054;&#x7F51;&#x884C;&#x4E1A;&#xFF0C;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x6570;&#x636E;&#x6307;&#x6807;&#x548C;&#x5E38;&#x89C1;&#x7684;&#x6570;&#x636E;&#x5206;&#x6790;&#x65B9;&#x6CD5;&#x5305;&#x62EC;&#xFF1A;&#x4E8B;&#x4EF6;&#x5206;&#x6790;&#xFF0C;&#x7559;&#x5B58;&#x5206;&#x6790;&#xFF0C;&#x6F0F;&#x6597;&#x5206;&#x6790;&#xFF0C;&#x5206;&#x5E03;&#x5206;&#x6790;&#xFF0C;&#x8DEF;&#x5F84;&#x5206;&#x6790;&#xFF0C;LTV&#x5206;&#x6790;&#x7B49;&#x3002;&#x5728;&#x505A;&#x6570;&#x636E;&#x5206;&#x6790;&#xFF0C;&#x6570;&#x636E;&#x62A5;&#x8868;&#x65F6;&#xFF0C;&#x901A;&#x5E38;&#x7528;SQL&#x6765;&#x8BA1;&#x7B97;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x6307;&#x6807;&#x6216;&#x8005;&#x5B9E;&#x73B0;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x5206;&#x6790;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6A21;&#x62DF;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x7528;&#x6237;&#x884C;&#x4E3A;&#x4E8B;&#x4EF6;&#x8868;&#x3002;&#x57FA;&#x4E8E;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x8868;&#xFF0C;&#x7528;SQL&#x6765;&#x5B9E;&#x73B0;&#x5E38;&#x89C1;&#x7684;&#x6570;&#x636E;&#x6307;&#x6807;&#x548C;&#x6570;&#x636E;&#x5206;&#x6790;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token comment"># &#x7528;&#x6237;&#x884C;&#x4E3A;&#x4E8B;&#x4EF6;&#x8868;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> Events <span class="token punctuation">(</span>
+    user_id <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+    event_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+    event_time <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">&apos;&apos;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="&#x4E8B;&#x4EF6;&#x91CF;&#xFF0C;&#x7528;&#x6237;&#x91CF;">&#x4E8B;&#x4EF6;&#x91CF;&#xFF0C;&#x7528;&#x6237;&#x91CF;</h4>
+<p>&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x7684;&#x4E8B;&#x4EF6;&#x91CF;&#x3002;&#x5728;&#x771F;&#x5B9E;&#x7684;&#x5927;&#x6570;&#x636E;&#x5206;&#x6790;&#x573A;&#x666F;&#xFF0C;&#x56E0;&#x4E3A;&#x6570;&#x636E;&#x91CF;&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x901A;&#x5E38;&#x4E00;&#x5B9A;&#x662F;&#x9700;&#x8981;&#x9650;&#x5B9A;&#x65F6;&#x95F4;&#x8303;&#x56F4;&#x7684;&#x3002;&#x800C;&#x4E14;&#x65F6;&#x95F4;&#x5B57;&#x6BB5;&#x901A;&#x5E38;&#x7528;&#x6765;&#x4F5C;&#x4E3A;&#x5206;&#x533A;&#x8868;&#x7684;&#x5206;&#x533A;&#x5B57;&#x6BB5;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x6309;&#x5929;&#x5206;&#x533A;&#x3002;</p>
+<p>&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x7684;&#x7528;&#x6237;&#x91CF;&#x5C31;&#x662F;&#x603B;&#x4E8B;&#x4EF6;&#x91CF;&#x6309;&#x7528;&#x6237;&#x505A;&#x53BB;&#x91CD;&#x5904;&#x7406;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token comment"># &#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x7684;&#x603B;&#x4E8B;&#x4EF6;&#x91CF;</span>
+<span class="token keyword">SELECT</span> <span class="token function">count</span><span class="token punctuation">(</span>event_name<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> Events
+<span class="token keyword">WHERE</span> event_time <span class="token operator">&gt;=</span> <span class="token string">&apos;2022-01-01 00:00:00&apos;</span>
+    <span class="token operator">AND</span> event_time <span class="token operator">&lt;</span> <span class="token string">&apos;2022-01-08 00:00:00&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment"># &#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x7684;&#x603B;&#x7528;&#x6237;&#x91CF;</span>
+<span class="token keyword">SELECT</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token keyword">DISTINCT</span> user_id<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> Events
+<span class="token keyword">WHERE</span> event_time <span class="token operator">&gt;=</span> <span class="token string">&apos;2022-01-01 00:00:00&apos;</span>
+    <span class="token operator">AND</span> event_time <span class="token operator">&lt;</span> <span class="token string">&apos;2022-01-08 00:00:00&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="dau&#xFF0C;uv&#xFF0C;pv">DAU&#xFF0C;UV&#xFF0C;PV</h4>
+<p>&#x6570;&#x636E;&#x5206;&#x6790;&#x4E2D;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x6309;&#x5929;&#x5C55;&#x793A;DAU&#xFF0C;&#x5728;Web&#x4FA7;&#x901A;&#x5E38;&#x79F0;&#x4E3A;UV&#x3002;&#x6216;&#x8005;&#x6309;&#x5929;&#x5C55;&#x793A;PV&#xFF0C;APP&#x4FA7;&#x4E0D;&#x592A;&#x8BB2;PV&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token comment"># &#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x7279;&#x5B9A;&#x4E8B;&#x4EF6;&#x7684;&#x6309;&#x5929;DAU</span>
+<span class="token keyword">SELECT</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">day</span><span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token keyword">DISTINCT</span> user_id<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> Events
+<span class="token keyword">WHERE</span> event_name <span class="token operator">=</span> <span class="token string">&quot;play&quot;</span>
+    <span class="token operator">AND</span> event_time <span class="token operator">&gt;=</span> <span class="token string">&quot;2022-01-01 00:00:00&quot;</span>
+    <span class="token operator">AND</span> event_time <span class="token operator">&lt;</span> <span class="token string">&quot;2022-01-08 00:00:00&quot;</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment"># &#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x7279;&#x5B9A;&#x4E8B;&#x4EF6;&#x7684;&#x6309;&#x5929;PV&#x6216;&#x8005;&#x8BF4;&#x4E8B;&#x4EF6;&#x91CF;</span>
+<span class="token keyword">SELECT</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">day</span><span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>event_name<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> Events
+<span class="token keyword">WHERE</span> event_name <span class="token operator">=</span> <span class="token string">&quot;play&quot;</span>
+    <span class="token operator">AND</span> event_time <span class="token operator">&gt;=</span> <span class="token string">&quot;2022-01-01 00:00:00&quot;</span>
+    <span class="token operator">AND</span> event_time <span class="token operator">&lt;</span> <span class="token string">&quot;2022-01-08 00:00:00&quot;</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0A;SQL&#x76F4;&#x63A5;&#x901A;&#x8FC7;GROUP BY&#x6309;&#x5929;&#x5C55;&#x793A;&#x6570;&#x636E;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#xFF1A;&#x5982;&#x679C;&#x67D0;&#x4E00;&#x5929;&#x6CA1;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x5728;SQL&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;&#x4E2D;&#x5C31;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x8BE5;&#x5929;&#x7684;&#x6570;&#x636E;&#x3002;&#x4F46;&#x56E0;&#x4E3A;&#x6700;&#x7EC8;&#x7684;&#x6570;&#x636E;&#x662F;&#x8981;&#x62FF;&#x6765;&#x505A;&#x5C55;&#x793A;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x67D0;&#x5929;&#x6CA1;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x9700;&#x8981;<strong>&#x589E;&#x52A0;&#x8BE5;&#x65E5;&#x671F;&#x7684;&#x6570;&#x636E;&#x884C;&#xFF0C;&#x7528;0&#x6765;&#x8865;&#x5145;</strong>&#x3002;&#x5177;&#x4F53;&#x5230;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6765;&#x5C55;&#x793A;&#x6570;&#x636E;&#x7684; BI &#x80FD;&#x591F;&#x517C;&#x5BB9;&#x7F3A;&#x5931;&#x65E5;&#x671F;&#x7684;&#x6570;&#x636E;&#x5F53;&#x7136;&#x6700;&#x597D;&#x3002;&#x5982;&#x679C; BI &#x65E0;&#x6CD5;&#x517C;&#x5BB9;&#xFF0C;&#x7528;&#x4E8E;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x5E93;&#x6216;&#x8005;&#x6570;&#x4ED3;&#x7684;&#x540E;&#x7AEF;&#x670D;&#x52A1;&#x4E5F;&#x53EF;&#x4EE5;&#x517C;&#x5BB9;&#x8BE5;&#x903B;&#x8F91;&#x3002;&#x5982;&#x679C;&#x540E;&#x7AEF;&#x670D;&#x52A1;&#x4E5F;&#x4E0D;&#x613F;&#x610F;&#x517C;&#x5BB9;&#xFF0C;&#x6700;&#x540E;&#x53EA;&#x80FD;&#x8FD8;&#x662F;&#x5229;&#x7528;SQL&#x5B9E;&#x73B0;&#xFF0C;&#x4E0D;&#x8FC7;SQL&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x9700;&#x6C42;&#x5E76;&#x4E0D;&#x7B80;&#x5355;&#x4E14;&#x4E0D;&#x6613;&#x7406;&#x89E3;&#x3002;</p>
+<p>SQL&#x5B9E;&#x73B0;&#x8BE5;&#x9700;&#x6C42;&#x9700;&#x8981;&#x5206;&#x4E24;&#x6B65;&#x8FDB;&#x884C;&#xFF1A;</p>
+<ol>
+<li>&#x751F;&#x6210;&#x6309;&#x884C;&#x7684;&#x8FDE;&#x7EED;&#x65E5;&#x671F;&#x3002;&#x6839;&#x636E;&#x6240;&#x7528;&#x6570;&#x636E;&#x5E93;&#x6216;&#x8005;&#x6570;&#x4ED3;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x5E94;&#x8BE5;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x3002;</li>
+<li>&#x6309;&#x884C;&#x7684;&#x8FDE;&#x7EED;&#x65E5;&#x671F;&#x548C;&#x539F;&#x6570;&#x636E;&#x505A;LEFT JOIN&#x3002;&#x5229;&#x7528;LEFT JOIN&#x65F6;&#x53F3;&#x8868;&#x67D0;&#x884C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x7528;NULL&#x66FF;&#x4EE3;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5C06;NULL&#x66FF;&#x6362;&#x4E3A;0&#x5373;&#x53EF;&#x3002;</li>
+</ol>
+<pre class="language-"><code class="lang-sql"><span class="token comment"># &#x7ED9;&#x5B9A;&#x65F6;&#x95F4;&#x8303;&#x56F4;&#xFF0C;&#x751F;&#x6210;&#x6309;&#x884C;&#x7684;&#x8FDE;&#x7EED;&#x65E5;&#x671F;</span>
+<span class="token keyword">SELECT</span>
+    <span class="token variable">@i</span> :<span class="token operator">=</span> <span class="token variable">@i</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token keyword">AS</span> <span class="token string">&apos;NO&apos;</span><span class="token punctuation">,</span>
+    <span class="token keyword">DATE</span><span class="token punctuation">(</span>
+    DATE_ADD<span class="token punctuation">(</span><span class="token string">&apos;2022-01-01&apos;</span><span class="token punctuation">,</span><span class="token keyword">INTERVAL</span> <span class="token variable">@i</span> <span class="token keyword">DAY</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token keyword">date</span>    <span class="token comment"># &#x5F00;&#x59CB;&#x65F6;&#x95F4;</span>
+<span class="token keyword">FROM</span>
+    Events<span class="token punctuation">,</span>                                            <span class="token comment"># &#x968F;&#x4FBF;&#x7ED9;&#x8868;&#xFF0C;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x8868;&#x7684;&#x884C;&#x6570;&#x6BD4;&#x9700;&#x8981;&#x7684;&#x5929;&#x6570;&#x591A;</span>
+    <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token variable">@i</span> :<span class="token operator">=</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> t                               <span class="token comment"># &#x8BBE;&#x7F6E;&#x521D;&#x59CB;&#x503C;&#x4E3A;-1&#x7684;&#x53D8;&#x91CF;i</span>
+<span class="token keyword">WHERE</span>
+    <span class="token variable">@i</span> <span class="token operator">&lt;</span> DATEDIFF<span class="token punctuation">(</span><span class="token string">&apos;2022-01-10&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;2022-01-01&apos;</span><span class="token punctuation">)</span>           <span class="token comment"># &#x7ED3;&#x675F;&#x65F6;&#x95F4;&#xFF0C;&#x5F00;&#x59CB;&#x65F6;&#x95F4;</span>
+</code></pre>
+<p>&#x4EE5;&#x65F6;&#x95F4;&#x8303;&#x56F4;&#x5185;&#x7684;&#x6309;&#x884C;&#x8FDE;&#x7EED;&#x65E5;&#x671F;&#x8868;&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x7ED3;&#x5408;&#x4E4B;&#x524D;&#x67E5;&#x8BE2;DAU&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FDB;&#x884C;&#x8054;&#x8868;&#x67E5;&#x8BE2;&#xFF0C;&#x83B7;&#x5F97;&#x6BCF;&#x4E2A;&#x65E5;&#x671F;&#x7684;DAU&#x6570;&#x636E;&#x3002;&#x89C2;&#x5BDF;&#x4E00;&#x4E0B;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x4E2D;&#xFF0C;2022-01-08~2022-01-10&#x4E09;&#x5929;&#x7684;DAU&#x6570;&#x636E;&#x5747;&#x4E3A;0&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">SELECT</span>
+    t1<span class="token punctuation">.</span><span class="token keyword">day</span><span class="token punctuation">,</span> ifnull<span class="token punctuation">(</span>t2<span class="token punctuation">.</span>DAU<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">as</span> DAU
+<span class="token keyword">FROM</span>
+    <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+        <span class="token variable">@i</span> :<span class="token operator">=</span> <span class="token variable">@i</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token keyword">AS</span> <span class="token keyword">NO</span><span class="token punctuation">,</span>
+        <span class="token keyword">DATE</span><span class="token punctuation">(</span>
+        DATE_ADD<span class="token punctuation">(</span> <span class="token string">&apos;2022-01-01&apos;</span><span class="token punctuation">,</span> <span class="token keyword">INTERVAL</span> <span class="token variable">@i</span> <span class="token keyword">DAY</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">day</span>     <span class="token comment"># &#x5F00;&#x59CB;&#x65F6;&#x95F4;</span>
+    <span class="token keyword">FROM</span>
+        Events<span class="token punctuation">,</span>
+        <span class="token punctuation">(</span> <span class="token keyword">SELECT</span> <span class="token variable">@i</span> :<span class="token operator">=</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">)</span> t
+    <span class="token keyword">WHERE</span>
+    <span class="token variable">@i</span> <span class="token operator">&lt;</span> DATEDIFF<span class="token punctuation">(</span> <span class="token string">&apos;2022-01-10&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;2022-01-01&apos;</span> <span class="token punctuation">)</span><span class="token punctuation">)</span> t1           <span class="token comment"># &#x7ED3;&#x675F;&#x65F6;&#x95F4;&#xFF0C;&#x5F00;&#x59CB;&#x65F6;&#x95F4;</span>
+<span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span>
+    <span class="token punctuation">(</span><span class="token keyword">SELECT</span> 
+         <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">day</span><span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token keyword">DISTINCT</span> user_id<span class="token punctuation">)</span> <span class="token keyword">as</span> DAU
+       <span class="token keyword">FROM</span> Events
+     <span class="token keyword">WHERE</span> 
+        event_time <span class="token operator">&gt;=</span> <span class="token string">&quot;2022-01-01 00:00:00&quot;</span>
+        <span class="token operator">AND</span> event_time <span class="token operator">&lt;</span> <span class="token string">&quot;2022-01-08 00:00:00&quot;</span>
+     <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span><span class="token punctuation">)</span> t2 
+<span class="token keyword">ON</span> t1<span class="token punctuation">.</span><span class="token keyword">day</span> <span class="token operator">=</span> t2<span class="token punctuation">.</span><span class="token keyword">day</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">day</th>
+<th style="text-align:left">DAU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">3</td>
+</tr>
+<tr>
+<td style="text-align:left">2022-01-02</td>
+<td style="text-align:left">3</td>
+</tr>
+<tr>
+<td style="text-align:left">2022-01-03</td>
+<td style="text-align:left">3</td>
+</tr>
+<tr>
+<td style="text-align:left">2022-01-04</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">2022-01-05</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">2022-01-06</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">2022-01-07</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">2022-01-08</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">2022-01-09</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">2022-01-10</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x7559;&#x5B58;&#x5206;&#x6790;&#xFF0C;&#x7559;&#x5B58;&#x7387;">&#x7559;&#x5B58;&#x5206;&#x6790;&#xFF0C;&#x7559;&#x5B58;&#x7387;</h4>
+<p>A&#x65E5;&#x671F;&#x7684;&#x6D3B;&#x8DC3;&#x7528;&#x6237;&#x5728;B&#x65E5;&#x671F;&#x7684;&#x7559;&#x5B58;&#x7387;&#x8BA1;&#x7B97;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E00;&#x4E0B;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ol>
+<li>&#x8BA1;&#x7B97;A&#x65E5;&#x671F;&#x6D3B;&#x8DC3;&#x7684;&#x7528;&#x6237;ID</li>
+<li>&#x8BA1;&#x7B97;A&#x65E5;&#x671F;&#x6D3B;&#x8DC3;&#x7684;&#x7528;&#x6237;&#x54EA;&#x4E9B;&#x5728;B&#x65E5;&#x671F;&#x4E5F;&#x6D3B;&#x8DC3;&#x8FC7;</li>
+<li>&#x5C06;&#x4EE5;&#x4E0A;&#x4E24;&#x6B65;&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x505A;join&#xFF0C;&#x7B97;&#x51FA;&#x7559;&#x5B58;&#x7387;</li>
+</ol>
+<p>&#x5BF9;&#x4E8E;&#x590D;&#x6742;&#x7684;SQL&#xFF0C;<strong>&#x53EF;&#x8BFB;&#x6027;</strong>&#x901A;&#x5E38;&#x5F88;&#x5DEE;&#x3002;&#x53EF;&#x4EE5;&#x5229;&#x7528;WITH AS&#x6765;&#x76F8;&#x5BF9;&#x63D0;&#x5347;&#x53EF;&#x8BFB;&#x6027;&#x3002;t1&#x7528;&#x6765;&#x8BA1;&#x7B97;&#x8D77;&#x59CB;&#x5929;&#x6D3B;&#x8DC3;&#x7684;&#x7528;&#x6237; &#xFF0C;t2&#x7528;&#x6765;&#x8BA1;&#x7B97;&#x8D77;&#x59CB;&#x5929;&#x7528;&#x6237;&#x5728;&#x7559;&#x5B58;&#x5929;&#x7559;&#x5B58;&#x7684;&#x7528;&#x6237;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">WITH</span> t1 <span class="token keyword">AS</span> <span class="token punctuation">(</span>                                              <span class="token comment"># &#x8BA1;&#x7B97;&#x8D77;&#x59CB;&#x5929;&#x7684;&#x6D3B;&#x8DC3;&#x7528;&#x6237;</span>
+        <span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> user_id
+        <span class="token keyword">FROM</span> Events
+        <span class="token keyword">WHERE</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">&apos;2022-01-01&apos;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    t2 <span class="token keyword">AS</span> <span class="token punctuation">(</span>                                                 <span class="token comment"># &#x8BA1;&#x7B97;&#x7559;&#x5B58;&#x5929;&#x7684;&#x6D3B;&#x8DC3;&#x7528;&#x6237;</span>
+        <span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> user_id
+        <span class="token keyword">FROM</span> Events
+        <span class="token keyword">WHERE</span> user_id <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t1<span class="token punctuation">)</span>
+            <span class="token operator">AND</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">&apos;2022-01-02&apos;</span>
+    <span class="token punctuation">)</span>
+
+<span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>t2<span class="token punctuation">.</span>user_id<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>t1<span class="token punctuation">.</span>user_id<span class="token punctuation">)</span> <span class="token keyword">AS</span> retention  <span class="token comment"># COUNT&#x4E0D;&#x4F1A;&#x5305;&#x542B;NULL</span>
+<span class="token keyword">FROM</span> t1
+    <span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> t2 <span class="token keyword">ON</span> t1<span class="token punctuation">.</span>user_id <span class="token operator">=</span> t2<span class="token punctuation">.</span>user_id<span class="token punctuation">;</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0A;SQL&#x53EA;&#x662F;&#x6C42;&#x5F97;&#x4E86;&#x67D0;&#x4E00;&#x65E5;&#x671F;&#x7684;&#x6B21;&#x65E5;&#x7559;&#x5B58;&#x7387;&#x3002;&#x4F46;&#x5728;&#x6570;&#x636E;&#x5206;&#x6790;&#x4E2D;&#xFF0C;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x770B;&#x5230;&#x7684;&#x662F;&#x5982;&#x4E0B;&#x7684;&#x7559;&#x5B58;&#x66F2;&#x7EBF;&#x3002;&#x7559;&#x5B58;&#x66F2;&#x7EBF;&#x63CF;&#x7ED8;&#x4E86;&#x7279;&#x5B9A;&#x65E5;&#x671F;&#x4E4B;&#x540E;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x6BCF;&#x5929;&#x7684;&#x7559;&#x5B58;&#x6570;&#x636E;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528;SQL&#x6765;&#x5B9E;&#x73B0;&#x7ED8;&#x5236;&#x8BE5;&#x7559;&#x5B58;&#x66F2;&#x7EBF;&#x6240;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p><img src="pics/SQLCases/image-20221205230409609.png" alt="image-20221205230409609"></p>
+<p>&#x548C;&#x6C42;&#x5355;&#x65E5;&#x7559;&#x5B58;&#x7387;&#x6700;&#x5927;&#x7684;&#x4E0D;&#x540C;&#x70B9;&#x5728;&#x4E8E;&#x9700;&#x8981;&#x540C;&#x65F6;&#x5BF9;&#x7528;&#x6237;ID&#x548C;&#x65E5;&#x671F;&#x505A;GROUP BY&#x3002;LEFT JOIN&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x6C42;&#x65F6;&#x95F4;&#x5DEE;&#x3002;&#x4EE5;&#x4E0B;SQL&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x6C42;&#x5F97;&#x65F6;&#x95F4;&#x5DEE;diff&#x8FD9;&#x4E00;&#x4E2D;&#x95F4;&#x7ED3;&#x679C;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">WITH</span> t1 <span class="token keyword">AS</span> <span class="token punctuation">(</span>
+        <span class="token keyword">SELECT</span> user_id<span class="token punctuation">,</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">day</span>
+        <span class="token keyword">FROM</span> Events
+        <span class="token keyword">WHERE</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">&apos;2022-01-01&apos;</span>
+        <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> user_id<span class="token punctuation">,</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    t2 <span class="token keyword">AS</span> <span class="token punctuation">(</span>
+        <span class="token keyword">SELECT</span> user_id<span class="token punctuation">,</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">day</span>
+        <span class="token keyword">FROM</span> Events
+        <span class="token keyword">WHERE</span> event_time <span class="token operator">&gt;=</span> <span class="token string">&quot;2022-01-01 00:00:00&quot;</span>
+            <span class="token operator">AND</span> event_time <span class="token operator">&lt;</span> <span class="token string">&quot;2022-01-08 00:00:00&quot;</span>
+        <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> user_id<span class="token punctuation">,</span> <span class="token keyword">date</span><span class="token punctuation">(</span>event_time<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+
+<span class="token keyword">SELECT</span> t1<span class="token punctuation">.</span>user_id<span class="token punctuation">,</span> t1<span class="token punctuation">.</span><span class="token keyword">day</span> <span class="token keyword">AS</span> start_day<span class="token punctuation">,</span> t2<span class="token punctuation">.</span><span class="token keyword">day</span> <span class="token keyword">AS</span> retent_day<span class="token punctuation">,</span> datediff<span class="token punctuation">(</span>t2<span class="token punctuation">.</span><span class="token keyword">day</span><span class="token punctuation">,</span> t1<span class="token punctuation">.</span><span class="token keyword">day</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> diff
+<span class="token keyword">FROM</span> t1
+    <span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> t2 <span class="token keyword">ON</span> t1<span class="token punctuation">.</span>user_id <span class="token operator">=</span> t2<span class="token punctuation">.</span>user_id<span class="token punctuation">;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">user_id</th>
+<th style="text-align:left">start_day</th>
+<th style="text-align:left">retent_day</th>
+<th style="text-align:left">diff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">01</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-07</td>
+<td style="text-align:left">6</td>
+</tr>
+<tr>
+<td style="text-align:left">01</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-05</td>
+<td style="text-align:left">4</td>
+</tr>
+<tr>
+<td style="text-align:left">01</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-03</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">01</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-02</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">01</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">03</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-07</td>
+<td style="text-align:left">6</td>
+</tr>
+<tr>
+<td style="text-align:left">03</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-06</td>
+<td style="text-align:left">5</td>
+</tr>
+<tr>
+<td style="text-align:left">03</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-05</td>
+<td style="text-align:left">4</td>
+</tr>
+<tr>
+<td style="text-align:left">03</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">04</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-03</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">04</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-02</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">04</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">2022-01-01</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4EE5;&#x4E0A;&#x7ED3;&#x679C;&#x4E2D;retent_day&#x8868;&#x793A;&#x8BE5;&#x7528;&#x6237;&#x6709;&#x7559;&#x5B58;&#x7684;&#x65E5;&#x671F;&#xFF0C;diff&#x5C31;&#x662F;&#x7559;&#x5B58;&#x65E5;&#x671F;&#x5230;&#x8D77;&#x59CB;&#x65E5;&#x671F;&#x7684;&#x5DEE;&#x503C;&#xFF0C;1&#x5C31;&#x662F;&#x6B21;&#x65E5;&#x7559;&#x5B58;&#xFF0C;2&#x5C31;2&#x65E5;&#x7559;&#x5B58;&#xFF0C;3&#x5C31;&#x662F;3&#x65E5;&#x7559;&#x5B58;&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x3002;&#x8981;&#x6C42;&#x7559;&#x4EBA;&#x6570;&#x5B58;&#x5C31;&#x53EA;&#x9700;&#x8981;&#x6309;&#x7167;diff&#x8FDB;&#x884C;GROUP BY&#x6C42;COUNT&#x3002;&#x5982;&#x679C;&#x8981;&#x6C42;&#x7559;&#x5B58;&#x7387;&#x5C31;&#x8FD8;&#x8981;&#x589E;&#x52A0;&#x4E00;&#x6B65;&#x3002;&#x800C;&#x4E14;&#x8FD9;&#x91CC;&#x540C;&#x6837;&#x5B58;&#x5728;&#x67D0;&#x5929;&#x5982;&#x679C;&#x662F;&#x7559;&#x5B58;&#x4EBA;&#x6570;&#x4E3A;0&#xFF0C;&#x5219;&#x7ED3;&#x679C;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x8BE5;&#x5929;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">SELECT</span> datediff<span class="token punctuation">(</span>t2<span class="token punctuation">.</span><span class="token keyword">day</span><span class="token punctuation">,</span> t1<span class="token punctuation">.</span><span class="token keyword">day</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> diff<span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> t1
+    <span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> t2 <span class="token keyword">ON</span> t1<span class="token punctuation">.</span>user_id <span class="token operator">=</span> t2<span class="token punctuation">.</span>user_id
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> diff
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> diff<span class="token punctuation">;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">diff</th>
+<th style="text-align:left">count(*)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0</td>
+<td style="text-align:left">3</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">2</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6F0F;&#x6597;&#x5206;&#x6790;&#xFF0C;&#x8F6C;&#x5316;&#x7387;">&#x6F0F;&#x6597;&#x5206;&#x6790;&#xFF0C;&#x8F6C;&#x5316;&#x7387;</h4>
+<p>&#x6F0F;&#x6597;&#x5206;&#x6790;&#x4E2D;&#x7684;&#x8F6C;&#x5316;&#x7387;&#x5176;&#x5B9E;&#x548C;&#x7559;&#x5B58;&#x7387;&#x6709;&#x76F8;&#x4F3C;&#x4E4B;&#x5904;&#x3002;&#x7559;&#x5B58;&#x7387;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x65E5;&#x671F;&#x7684;&#x8F6C;&#x5316;&#x7387;&#xFF0C;&#x800C;&#x6F0F;&#x6597;&#x5206;&#x6790;&#x4E2D;&#x7684;&#x8F6C;&#x5316;&#x7387;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x5177;&#x4F53;&#x4E8B;&#x4EF6;&#x7684;&#x8F6C;&#x5316;&#x7387;&#x3002;&#x6240;&#x4EE5;SQL&#x5199;&#x8D77;&#x6765;&#x4E5F;&#x5DEE;&#x4E0D;&#x591A;&#x3002;&#x4F46;&#x662F;&#x901A;&#x5E38;&#x5728;&#x6F0F;&#x6597;&#x5206;&#x6790;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5BF9;&#x8F6C;&#x5316;&#x7684;&#x65F6;&#x95F4;&#x505A;&#x51FA;&#x9650;&#x5236;&#xFF0C;&#x6BD4;&#x5982;&#x8F6C;&#x5316;&#x5FC5;&#x987B;&#x53D1;&#x751F;&#x5728;24&#x5C0F;&#x65F6;&#x4E4B;&#x5185;&#x3002;</p>
+<div id="comment-wrapper" class="comment-wrapper clearfix">        <div class="comment-copyright">        <span class="title">Comments</span>        <span class="content">                Copyright &#xA9; powerAmore all right reserved, powered by                <a href="https://github.com/aleen42" target="_blank">aleen42</a>            </span>    </div>        <div class="modules"><div class="content-wrapper">    <div class="comment-list comment-wrapper f-dn">        <div class="empty-comments comment-item clearfix">Empty Comments</div>    </div>    <div class="editor-wrapper f-dn">        <div class="editor">        </div><!--        --><div>            <img class="user-avatar" src=".">            <i class="fa fa-sign-out" title="sign out" action="logout"></i>        </div>    </div>    <div class="auth-wrapper f-dn">        <div class="description">            <div class="title">Sign in <a href="https://github.com" target="_blank">GitHub</a></div>            <div class="content">                <p>As the plugin is integrated with a code management system like GitLab or GitHub, you may have to auth                    with your account before leaving comments around this article.</p>                <p>Notice: This plugin has used Cookie to store your token with an expiration.</p>            </div>        </div>        <div class="auth">            <button class="btn auth-btn">authorize</button>        </div>    </div></div></div>    <script type="text/javascript">        SYS_CONST = JSON.parse('{"redirect":"","clientId":"","repo":"powerAmore/DataSciChecklist","copyright":"Copyright © powerAmore","type":"github","host":"https://github.com","path":"SQLCases.md"}');    </script></div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="SQLKeypoints.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: SQL要点">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SQL案例","level":"1.10","depth":1,"next":{"title":"附录","level":"1.11","depth":1,"ref":"","articles":[{"title":"概率论与数理统计","level":"1.11.1","depth":2,"path":"ProbabilityAndStatistics.md","ref":"ProbabilityAndStatistics.md","articles":[]},{"title":"Git Cheat Sheet","level":"1.11.2","depth":2,"path":"GitCheatSheet.md","ref":"GitCheatSheet.md","articles":[]}]},"previous":{"title":"SQL要点","level":"1.9","depth":1,"path":"SQLKeypoints.md","ref":"SQLKeypoints.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-code","-codeline","-highlight","prism","expandable-chapters","chapter-fold","splitter","back-to-top-button","advanced-emoji","hide-element","insert-logo","custom-favicon","pageview-count","-sharing","sharing-plus","flexible-alerts","katex-new","comments-footer","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{},"katex-new":{},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"pics/logo.ico","comments-footer":{"type":"github","repo":"powerAmore/DataSciChecklist","copyright":"Copyright © powerAmore"},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"all":["douban","facebook","google","twitter","weibo","qq","whatsapp"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"pics/logo.jpeg","style":"background: none; max-height: 30px; min-height: 30px"},"expandable-chapters":{}},"theme":"default","author":"powerlee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据技术与算法Checklist","language":"zh-hans","links":{},"gitbook":"*","description":"大数据技术与算法Checklist"},"file":{"path":"SQLCases.md","mtime":"2022-12-06T14:54:31.574Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-10T13:03:56.637Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-comments-footer/comment.dist.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

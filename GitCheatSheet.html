@@ -1,0 +1,635 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Git Cheat Sheet · 大数据技术与算法Checklist</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="powerlee">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-new/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-comments-footer/comment.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="MarkdownReference.html" />
+    
+    
+    <link rel="prev" href="ProbabilityAndStatistics.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="GradientDescent.html">
+            
+                <a href="GradientDescent.html">
+            
+                    
+                    梯度下降
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="LinearRegression.md">
+            
+                <span>
+            
+                    
+                    线性回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="LogisticRegression.md">
+            
+                <span>
+            
+                    
+                    逻辑回归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="GradientDescentAdvance.md">
+            
+                <span>
+            
+                    
+                    梯度下降进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="HypothesisTesting.md">
+            
+                <span>
+            
+                    
+                    A/B实验原理：假设检验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="ABTest.html">
+            
+                <a href="ABTest.html">
+            
+                    
+                    A/B实验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="TimeSeries.html">
+            
+                <a href="TimeSeries.html">
+            
+                    
+                    时间序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="SQLKeypoints.html">
+            
+                <a href="SQLKeypoints.html">
+            
+                    
+                    SQL要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="SQLCases.html">
+            
+                <a href="SQLCases.html">
+            
+                    
+                    SQL案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    附录
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="ProbabilityAndStatistics.html">
+            
+                <a href="ProbabilityAndStatistics.html">
+            
+                    
+                    概率论与数理统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11.2" data-path="GitCheatSheet.html">
+            
+                <a href="GitCheatSheet.html">
+            
+                    
+                    Git Cheat Sheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="MarkdownReference.html">
+            
+                <a href="MarkdownReference.html">
+            
+                    
+                    Markdown Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Git Cheat Sheet</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><img src="pics/GitCheatSheet/git-command.png" alt="img" style="zoom:150%;"></p>
+<h3 id="&#x6DFB;&#x52A0;&#x4ED3;&#x5E93;&#x63D0;&#x4EA4;&#x6587;&#x4EF6;">&#x6DFB;&#x52A0;&#x4ED3;&#x5E93;&#x63D0;&#x4EA4;&#x6587;&#x4EF6;</h3>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x5E93;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> init
+Initialized empty Git repository <span class="token keyword">in</span> /Users/xxx/xxx/.git/
+</code></pre>
+<p>&#x628A;&#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x8FDB;&#x6682;&#x5B58;&#x533A;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> <span class="token function">add</span> readme.txt
+$ <span class="token function">git</span> <span class="token function">add</span> file1.txt file2.txt
+
+<span class="token comment"># &#x6DFB;&#x52A0;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x8FDB;&#x6682;&#x5B58;&#x533A;</span>
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+</code></pre>
+<p>&#x628A;&#x6587;&#x4EF6;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x4ED3;&#x5E93;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">&quot;wrote a readme file&quot;</span>
+</code></pre>
+<p>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5230;&#x4F4D;&#x4E8E;&#x54EA;&#x4E2A;&#x5206;&#x652F;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> status
+<span class="token comment"># On branch master</span>
+<span class="token comment"># Your branch is ahead of &apos;origin/master&apos; by 202 commits.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Untracked files:</span>
+<span class="token comment">#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="token comment">#</span>
+<span class="token comment">#    ../profile.svg</span>
+<span class="token comment">#    ../templates/customer_service.html</span>
+nothing added to commit but untracked files present <span class="token punctuation">(</span>use <span class="token string">&quot;git add&quot;</span> to track<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x67E5;&#x770B;&#x4FEE;&#x6539;&#x5185;&#x5BB9;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> <span class="token function">diff</span> readme.txt 
+<span class="token function">diff</span> <span class="token parameter variable">--git</span> a/readme.txt b/readme.txt
+index 46d49bf<span class="token punctuation">..</span>9247db6 <span class="token number">100644</span>
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,2 +1,2 @@
+<span class="token parameter variable">-Git</span> is a version control system.
++Git is a distributed version control system.
+ Git is <span class="token function">free</span> software.
+</code></pre>
+<h3 id="&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;">&#x672C;&#x5730;&#x7248;&#x672C;&#x63A7;&#x5236;</h3>
+<p>&#x7248;&#x672C;&#x67E5;&#x770B;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> log
+commit 1094adb7b9b3807259d8cb349e7df1d4d6477073 <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> master<span class="token punctuation">)</span>
+Author: Michael Liao <span class="token operator">&lt;</span>askxuefeng@gmail.com<span class="token operator">&gt;</span>
+Date:   Fri May <span class="token number">18</span> <span class="token number">21</span>:06:15 <span class="token number">2018</span> +0800
+
+    append GPL
+
+commit e475afc93c209a690c39c13a46716e8fa000c366
+Author: Michael Liao <span class="token operator">&lt;</span>askxuefeng@gmail.com<span class="token operator">&gt;</span>
+Date:   Fri May <span class="token number">18</span> <span class="token number">21</span>:03:36 <span class="token number">2018</span> +0800
+
+    <span class="token function">add</span> distributed
+</code></pre>
+<p>&#x56DE;&#x9000;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x56DE;&#x9000;&#x5230;&#x4E0A;&#x4E0A;&#x4E2A;&#x7248;&#x672C;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> reset <span class="token parameter variable">--hard</span> HEAD^
+HEAD is now at e475afc <span class="token function">add</span> distributed
+
+$ <span class="token function">git</span> reset <span class="token parameter variable">--hard</span> HEAD^
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x7248;&#x672C;&#x53F7;&#x66F4;&#x6539;&#x5230;&#x6307;&#x5B9A;&#x7248;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x4E4B;&#x540E;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> reset <span class="token parameter variable">--hard</span> 1094a
+HEAD is now at 83b0afe append GPL
+</code></pre>
+<p>&#x56DE;&#x9000;&#x5230;&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x4E4B;&#x540E;&#xFF0C;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;git log&#x67E5;&#x770B;&#x5230;&#x540E;&#x9762;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;git relog&#x6765;&#x67E5;&#x770B;&#x6BCF;&#x4E00;&#x6B21;&#x8F93;&#x5165;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x67E5;&#x770B;&#x5230;&#x540E;&#x9762;&#x7248;&#x672C;&#x7684;&#x7248;&#x672C;&#x53F7;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> reflog
+e475afc HEAD@<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span>: reset: moving to HEAD^
+1094adb <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> master<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">}</span>: commit: append GPL
+e475afc HEAD@<span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">}</span>: commit: <span class="token function">add</span> distributed
+eaadf4e HEAD@<span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">}</span>: commit <span class="token punctuation">(</span>initial<span class="token punctuation">)</span>: wrote a readme <span class="token function">file</span>
+</code></pre>
+<h3 id="&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;">&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</h3>
+<p>&#x5173;&#x8054;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x5E76;&#x628A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x53D6;&#x540D;&#x4E3A;origin</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> remote <span class="token function">add</span> origin git@github.com:xxx/learngit.git
+</code></pre>
+<p>&#x7B2C;&#x4E00;&#x6B21;&#x5C06;&#x672C;&#x5730;&#x4ED3;&#x5E93;<code>master</code>&#x5206;&#x652F;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;<code>origin</code>&#x4ED3;&#x5E93;&#x3002;<code>-u</code>&#x53C2;&#x6570;&#x4F1A;&#x5C06;&#x672C;&#x5730;<code>master</code>&#x5206;&#x652F;&#x548C;&#x8FDC;&#x7A0B;<code>master</code>&#x5206;&#x652F;&#x505A;&#x5173;&#x8054;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> push <span class="token parameter variable">-u</span> origin master
+Counting objects: <span class="token number">20</span>, done.
+Delta compression using up to <span class="token number">4</span> threads.
+Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">15</span>/15<span class="token punctuation">)</span>, done.
+Writing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">20</span>/20<span class="token punctuation">)</span>, <span class="token number">1.64</span> KiB <span class="token operator">|</span> <span class="token number">560.00</span> KiB/s, done.
+Total <span class="token number">20</span> <span class="token punctuation">(</span>delta <span class="token number">5</span><span class="token punctuation">)</span>, reused <span class="token number">0</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>
+remote: Resolving deltas: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">5</span>/5<span class="token punctuation">)</span>, done.
+To github.com:michaelliao/learngit.git
+ * <span class="token punctuation">[</span>new branch<span class="token punctuation">]</span>      master -<span class="token operator">&gt;</span> master
+Branch <span class="token string">&apos;master&apos;</span> <span class="token builtin class-name">set</span> up to track remote branch <span class="token string">&apos;master&apos;</span> from <span class="token string">&apos;origin&apos;</span><span class="token builtin class-name">.</span>
+</code></pre>
+<p>&#x540E;&#x7EED;&#x5C06;&#x672C;&#x5730;&#x4ED3;&#x5E93;<code>master</code>&#x5206;&#x652F;&#x5185;&#x5BB9;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> push origin master
+</code></pre>
+<p>&#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4FE1;&#x606F;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> remote <span class="token parameter variable">-v</span>
+origin  git@github.com:xxx/learn-git.git <span class="token punctuation">(</span>fetch<span class="token punctuation">)</span>
+origin  git@github.com:xxx/learn-git.git <span class="token punctuation">(</span>push<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x89E3;&#x9664;&#x548C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;origin&#x7684;&#x5173;&#x8054;&#x3002;&#x5982;&#x679C;&#x8981;&#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x9700;&#x8981;&#x53BB;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x6240;&#x5728;&#x5730;&#x5740;&#x8FDB;&#x884C;&#x5220;&#x9664;&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> remote <span class="token function">rm</span> origin
+</code></pre>
+<p>&#x4ECE;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x514B;&#x9686;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x5E93;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> clone git@github.com:xxx/gitskills.git
+Cloning into <span class="token string">&apos;gitskills&apos;</span><span class="token punctuation">..</span>.
+remote: Counting objects: <span class="token number">3</span>, done.
+remote: Total <span class="token number">3</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, reused <span class="token number">0</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, pack-reused <span class="token number">3</span>
+Receiving objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">3</span>/3<span class="token punctuation">)</span>, done.
+</code></pre>
+<p>&#x4ECE;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x62C9;&#x53D6;&#x4EE3;&#x7801;&#x5E76;&#x5408;&#x5E76;&#x672C;&#x5730;&#x7248;&#x672C;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> pull
+$ <span class="token function">git</span> pull origin
+</code></pre>
+<p><code>git pull</code>&#x5176;&#x5B9E;&#x5C31;&#x662F; <code>git fetch</code> &#x548C;<code>git merge FETCH_HEAD</code> &#x7684;&#x7B80;&#x5199;&#x3002;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># git pull &lt;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x540D;&gt; &lt;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x540D;&gt;:&lt;&#x672C;&#x5730;&#x5206;&#x652F;&#x540D;&gt;</span>
+
+<span class="token comment"># &#x62C9;&#x53D6;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;origin&#x7684;master&#x5206;&#x652F;&#xFF0C;&#x4E0E;&#x672C;&#x5730;&#x7684;brantest&#x5206;&#x652F;&#x5408;&#x5E76;</span>
+$ <span class="token function">git</span> pull origin master:brantest
+
+<span class="token comment"># &#x5982;&#x679C;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x662F;&#x4E0E;&#x5F53;&#x524D;&#x5206;&#x652F;&#x5408;&#x5E76;&#xFF0C;&#x5219;&#x5192;&#x53F7;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x7701;&#x7565;</span>
+$ <span class="token function">git</span> pull origin master
+</code></pre>
+<h3 id="&#x5206;&#x652F;&#x64CD;&#x4F5C;">&#x5206;&#x652F;&#x64CD;&#x4F5C;</h3>
+<p>&#x521B;&#x5EFA;<code>dev</code>&#x5206;&#x652F;&#xFF0C;&#x7136;&#x540E;&#x5207;&#x6362;&#x5230;<code>dev</code>&#x5206;&#x652F;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> dev
+Switched to a new branch <span class="token string">&apos;dev&apos;</span>
+</code></pre>
+<p><code>git checkout</code>&#x547D;&#x4EE4;&#x52A0;&#x4E0A;<code>-b</code>&#x53C2;&#x6570;&#x8868;&#x793A;<strong>&#x521B;&#x5EFA;</strong>&#x5E76;<strong>&#x5207;&#x6362;</strong>&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4EE5;&#x4E0B;&#x4E24;&#x6761;&#x547D;&#x4EE4;&#x3002;&#x5176;&#x4E2D;<code>git branch dev</code>&#x4E3A;<strong>&#x521B;&#x5EFA;</strong>&#x672C;&#x5730;&#x5206;&#x652F;&#xFF0C;<code>git checkout dev</code>&#x4E3A;<strong>&#x5207;&#x6362;</strong>&#x5206;&#x652F;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> branch dev
+$ <span class="token function">git</span> checkout dev
+Switched to branch <span class="token string">&apos;dev&apos;</span>
+</code></pre>
+<p><code>switch</code>&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5207;&#x6362;&#x5206;&#x652F;&#xFF0C;&#x76F8;&#x6BD4;<code>checkout</code>&#x66F4;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;&#x56E0;&#x4E3A;&#x64A4;&#x9500;&#x4FEE;&#x6539;&#x662F;<code>git checkout -- <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>file</span><span class="token punctuation">&gt;</span></span></code>&#xFF0C;&#x540C;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x4F5C;&#x7528;&#xFF0C;&#x786E;&#x5B9E;&#x6709;&#x70B9;&#x4EE4;&#x4EBA;&#x8FF7;&#x60D1;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x5E76;&#x5207;&#x6362;&#x5230;&#x65B0;&#x7684;<code>dev</code>&#x5206;&#x652F;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> switch <span class="token parameter variable">-c</span> dev
+</code></pre>
+<p>&#x76F4;&#x63A5;&#x5207;&#x6362;&#x5230;&#x5DF2;&#x6709;&#x7684;<code>master</code>&#x5206;&#x652F;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> switch master
+</code></pre>
+<p>&#x7528;<code>git branch</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x5206;&#x652F;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> branch
+* dev
+  master
+</code></pre>
+<p>&#x628A;<code>dev</code>&#x5206;&#x652F;&#x7684;&#x5DE5;&#x4F5C;&#x6210;&#x679C;&#x5408;&#x5E76;&#x5230;&#x5F53;&#x524D;&#x6240;&#x5904;&#x7684;<code>master</code>&#x5206;&#x652F;&#x3002;<code>Fast-forward</code>&#x4FE1;&#x606F;&#x8868;&#x793A;&#x8FD9;&#x6B21;&#x5408;&#x5E76;&#x662F;&#x201C;&#x5FEB;&#x8FDB;&#x6A21;&#x5F0F;&#x201D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x628A;<code>master</code>&#x6307;&#x5411;<code>dev</code>&#x7684;&#x5F53;&#x524D;&#x63D0;&#x4EA4;&#x3002;&#x4E5F;&#x4E0D;&#x662F;&#x6BCF;&#x6B21;&#x5408;&#x5E76;&#x90FD;&#x80FD;<code>Fast-forward</code>&#x3002;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> merge dev
+Updating d46f35e<span class="token punctuation">..</span>b17d20e
+Fast-forward
+ readme.txt <span class="token operator">|</span> <span class="token number">1</span> +
+ <span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">1</span> insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5220;&#x9664;<code>dev</code>&#x5206;&#x652F;</p>
+<pre class="language-"><code class="lang-bash">$ <span class="token function">git</span> branch <span class="token parameter variable">-d</span> dev
+Deleted branch dev <span class="token punctuation">(</span>was b17d20e<span class="token punctuation">)</span>.
+</code></pre>
+<div id="comment-wrapper" class="comment-wrapper clearfix">        <div class="comment-copyright">        <span class="title">Comments</span>        <span class="content">                Copyright &#xA9; powerAmore all right reserved, powered by                <a href="https://github.com/aleen42" target="_blank">aleen42</a>            </span>    </div>        <div class="modules"><div class="content-wrapper">    <div class="comment-list comment-wrapper f-dn">        <div class="empty-comments comment-item clearfix">Empty Comments</div>    </div>    <div class="editor-wrapper f-dn">        <div class="editor">        </div><!--        --><div>            <img class="user-avatar" src=".">            <i class="fa fa-sign-out" title="sign out" action="logout"></i>        </div>    </div>    <div class="auth-wrapper f-dn">        <div class="description">            <div class="title">Sign in <a href="https://github.com" target="_blank">GitHub</a></div>            <div class="content">                <p>As the plugin is integrated with a code management system like GitLab or GitHub, you may have to auth                    with your account before leaving comments around this article.</p>                <p>Notice: This plugin has used Cookie to store your token with an expiration.</p>            </div>        </div>        <div class="auth">            <button class="btn auth-btn">authorize</button>        </div>    </div></div></div>    <script type="text/javascript">        SYS_CONST = JSON.parse('{"redirect":"","clientId":"","repo":"powerAmore/DataSciChecklist","copyright":"Copyright © powerAmore","type":"github","host":"https://github.com","path":"GitCheatSheet.md"}');    </script></div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ProbabilityAndStatistics.html" class="navigation navigation-prev " aria-label="Previous page: 概率论与数理统计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="MarkdownReference.html" class="navigation navigation-next " aria-label="Next page: Markdown Reference">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Git Cheat Sheet","level":"1.11.2","depth":2,"next":{"title":"Markdown Reference","level":"1.12","depth":1,"path":"MarkdownReference.md","ref":"MarkdownReference.md","articles":[]},"previous":{"title":"概率论与数理统计","level":"1.11.1","depth":2,"path":"ProbabilityAndStatistics.md","ref":"ProbabilityAndStatistics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-code","-codeline","-highlight","prism","expandable-chapters","chapter-fold","splitter","back-to-top-button","advanced-emoji","hide-element","insert-logo","custom-favicon","pageview-count","-sharing","sharing-plus","flexible-alerts","katex-new","comments-footer","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{},"katex-new":{},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"pics/logo.ico","comments-footer":{"type":"github","repo":"powerAmore/DataSciChecklist","copyright":"Copyright © powerAmore"},"theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"all":["douban","facebook","google","twitter","weibo","qq","whatsapp"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"pics/logo.jpeg","style":"background: none; max-height: 30px; min-height: 30px"},"expandable-chapters":{}},"theme":"default","author":"powerlee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据技术与算法Checklist","language":"zh-hans","links":{},"gitbook":"*","description":"大数据技术与算法Checklist"},"file":{"path":"GitCheatSheet.md","mtime":"2022-12-10T11:22:44.228Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-10T13:03:56.637Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-comments-footer/comment.dist.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
