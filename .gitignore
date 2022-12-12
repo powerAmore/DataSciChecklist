@@ -1,2 +1,6 @@
-_book/*
 test
+.DS_Store
+
+_book/*
+.ipynb_checkpoints/*
+node_modules/*
