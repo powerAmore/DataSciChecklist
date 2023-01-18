@@ -662,7 +662,153 @@ Coefficient of determination: 0.68
 
 ### &#x901A;&#x8FC7;PyTorch&#x5B9E;&#x73B0;&#x7EBF;&#x6027;&#x56DE;&#x5F52;
 
+&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x5229;&#x7528;PyTorch&#x4E2D;&#x7684;&#x81EA;&#x52A8;&#x6C42;&#x5BFC;`autogard`&#xFF0C;&#x5C3D;&#x91CF;&#x5C11;&#x7684;&#x4F7F;&#x7528;PyTorch&#x7684;API&#x6765;&#x91CD;&#x5199;&#x4E4B;&#x524D;&#x624B;&#x5199;&#x7684;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x4EE3;&#x7801;&#x3002;&#x4E3B;&#x8981;&#x662F;&#x66FF;&#x4EE3;&#x5176;&#x4E2D;&#x81EA;&#x5DF1;&#x8BA1;&#x7B97;&#x7684;&#x5747;&#x65B9;&#x8BEF;&#x5DEE;&#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;&#x7684;&#x68AF;&#x5EA6;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4EE3;&#x7801;&#x76F8;&#x6BD4;&#x4E4B;&#x524D;&#x6709;&#x6240;&#x7B80;&#x5316;&#xFF0C;&#x4F46;&#x662F;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x4E0E;&#x539F;&#x6765;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x3002;
 
+```python
+import numpy as np
+import torch
+
+points = np.genfromtxt(&apos;data.csv&apos;, delimiter=&apos;,&apos;)
+
+m = len(points) # &#x6837;&#x672C;&#x91CF;
+n = len(points[0]) # &#x6837;&#x672C;&#x7EF4;&#x6570;
+
+# &#x4ECE;points&#x4E2D;&#x53D6;&#x51FA;&#x6837;&#x672C;&#x5217;&#xFF0C;&#x5E76;&#x5728;&#x6BCF;&#x4E2A;&#x6837;&#x672C;&#x540E;&#x9762;&#x589E;&#x52A0;&#x4E00;&#x4E2A;1
+X = np.c_[points[:,0], np.ones((m, 1))]
+X = torch.from_numpy(X)
+# &#x4ECE;points&#x4E2D;&#x53D6;&#x51FA;&#x76EE;&#x6807;&#x503C;&#x5411;&#x91CF;
+Y = points[:,1].reshape(-1, 1)  # &#x8F6C;&#x6210;&#x5217;&#x5411;&#x91CF;
+Y = torch.from_numpy(Y)
+# &#x521D;&#x59CB;&#x5316;&#x6743;&#x91CD;&#x7CFB;&#x6570;
+W = torch.tensor([[0, 0]], dtype=float, requires_grad=True)
+
+# &#x76EE;&#x6807;&#x7EBF;&#x6027;&#x51FD;&#x6570; y = f(x)
+def f(w, x):
+    return torch.mm(x, w.T)  # &#x53C9;&#x4E58;
+
+# &#x5747;&#x65B9;&#x8BEF;&#x5DEE;&#x635F;&#x5931;&#x51FD;&#x6570; J(w)
+def J(w):
+    y_hat = f(w, X)
+    return (0.5 * (y_hat - Y) ** 2).sum()
+
+alpha = torch.tensor(0.000001)  # &#x8BBE;&#x7F6E;&#x5B66;&#x4E60;&#x7387;
+num_iter = 10                   # &#x8FED;&#x4EE3;&#x6B21;&#x6570;
+for i in range(num_iter):
+    valueJ = J(W)
+    valueJ.backward()  # &#x53CD;&#x5411;&#x4F20;&#x64AD;&#xFF0C;&#x6C42;&#x6743;&#x91CD;&#x7CFB;&#x6570;&#x7684;&#x68AF;&#x5EA6;
+    print(&quot;J(w):{}, grad_J(w):{}, w:{}&quot;.format(valueJ, W.grad.detach().numpy(), W.detach().numpy()))
+    W = W.detach() - alpha * W.grad  # &#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#xFF0C;&#x8FED;&#x4EE3;&#x6743;&#x91CD;&#x7CFB;&#x6570;
+    W.requires_grad_(True)
+```
+
+```
+J(w):278255.39172416076, grad_J(w):[[-368535.14867955   -7273.50505537]], w:[[0. 0.]]
+J(w):159313.34617426153, grad_J(w):[[-276698.86381974   -5468.49074446]], w:[[0.36853515 0.00727351]]
+J(w):92264.2712591587, grad_J(w):[[-207747.47808636   -4113.27215311]], w:[[0.64523401 0.012742  ]]
+J(w):54467.89364824159, grad_J(w):[[-155978.24981457   -3095.76363147]], w:[[0.85298149 0.01685527]]
+J(w):33161.61650955656, grad_J(w):[[-117109.51690453   -2331.81041554]], w:[[1.00895974 0.01995103]]
+J(w):21151.00912592823, grad_J(w):[[-87926.57467305  -1758.22846424]], w:[[1.12606925 0.02228284]]
+J(w):14380.4835926563, grad_J(w):[[-66015.79823348  -1327.57871585]], w:[[1.21399583 0.02404107]]
+J(w):10563.855790476817, grad_J(w):[[-49565.01954324  -1004.24355961]], w:[[1.28001163 0.02536865]]
+J(w):8412.37598692381, grad_J(w):[[-37213.64896269   -761.48102074]], w:[[1.32957665 0.02637289]]
+J(w):7199.560317930455, grad_J(w):[[-27940.14537431   -579.2130198 ]], w:[[1.3667903  0.02713437]]
+```
+
+&#x5176;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x5229;&#x7528;PyTorch&#x63D0;&#x4F9B;&#x7684;&#x76F8;&#x5173;&#x63A5;&#x53E3;&#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x3002;&#x5B9E;&#x9A8C;&#x6570;&#x636E;&#x96C6;&#x8FD8;&#x662F;&#x91C7;&#x7528;&#x5728;sklearn&#x5B9E;&#x9A8C;&#x4E2D;&#x6240;&#x7528;&#x5230;&#x7684;&#x6CE2;&#x58EB;&#x987F;&#x623F;&#x4EF7;&#x9884;&#x6D4B;&#x6570;&#x636E;&#x96C6;&#x3002;&#x5982;&#x679C;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x5B58;&#x5728;&#x53EF;&#x7528;GPU&#xFF0C;&#x5219;TyTorch&#x53EF;&#x4EE5;&#x5C06;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x7684;&#x8FED;&#x4EE3;&#x8FD0;&#x7B97;&#x653E;&#x5230;GPU&#x4E0A;&#x8FDB;&#x884C;&#xFF0C;&#x5BF9;&#x4E8E;&#x5927;&#x6570;&#x636E;&#x96C6;&#x7684;&#x590D;&#x6742;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#xFF0C;&#x5C06;&#x6781;&#x5927;&#x7684;&#x63D0;&#x5347;&#x8FD0;&#x884C;&#x6548;&#x7387;&#x3002;
+
+```python
+import numpy as np
+import torch
+import torch.nn as nn
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+def load_and_preprocess_data():
+    boston_data = datasets.load_boston()  # &#x52A0;&#x8F7D;&#x6CE2;&#x58EB;&#x987F;&#x623F;&#x4EF7;&#x9884;&#x6D4B;&#x6570;&#x636E;&#x96C6;&#xFF0C;sklearn&#x5185;&#x7F6E;&#x4E86;&#x8BE5;&#x6570;&#x636E;&#x96C6;
+    # &#x5C06;&#x6570;&#x636E;&#x96C6;&#x5206;&#x89E3;&#x4E3A;&#x6D4B;&#x8BD5;&#x96C6;&#x548C;&#x8BAD;&#x7EC3;&#x96C6;
+    x_train, x_test, y_train, y_test = train_test_split(boston_data.data, boston_data.target,
+                                                        test_size=0.25,  # &#x8BBE;&#x7F6E;&#x6D4B;&#x8BD5;&#x96C6;&#x7684;&#x6BD4;&#x4F8B;&#x5360;&#x5168;&#x4F53;&#x6570;&#x636E;&#x96C6;&#x7684;&#x6BD4;&#x4F8B;
+                                                        random_state=16) # &#x8BBE;&#x7F6E;&#x968F;&#x673A;&#x6570;&#x79CD;&#x5B50;&#xFF0C;&#x76F8;&#x540C;&#x7684;&#x968F;&#x673A;&#x6570;&#x79CD;&#x5B50;&#x6BCF;&#x6B21;&#x90FD;&#x4F1A;&#x4EA7;&#x751F;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x7684;&#x5212;&#x5206;&#x7ED3;&#x679C;
+    transfer = StandardScaler()
+    x_train = transfer.fit_transform(x_train)  # &#x5BF9;&#x8BAD;&#x7EC3;&#x96C6;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6807;&#x51C6;&#x5316;&#x5904;&#x7406;
+    x_test = transfer.transform(x_test)        # &#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x91CC;&#x662F;&#x57FA;&#x4E8E;&#x8BAD;&#x7EC3;&#x96C6;&#x6807;&#x51C6;&#x5316;&#x540E;&#x7684;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#xFF0C;&#x5BF9;&#x6D4B;&#x8BD5;&#x96C6;&#x8FDB;&#x884C;&#x6807;&#x51C6;&#x5316;
+
+    return x_train, x_test, y_train, y_test
+
+x_train, x_test, y_train, y_test = load_and_preprocess_data()
+```
+
+```python
+device = torch.device(&apos;cuda&apos; if torch.cuda.is_available() else &apos;cpu&apos;)
+
+class LinearRegression(nn.Module):
+    def __init__(self, input_dim, output_dim):
+        super().__init__()
+        self.linear = nn.Linear(input_dim, output_dim)
+
+    def forward(self, x):
+        out = self.linear(x)
+        return out
+
+input_dim = 13
+output_dim = 1
+LRModel=LinearRegression(input_dim, output_dim)
+LRModel.to(device) # &#x5982;&#x679C;&#x6709;&#x80FD;&#x7528;GPU&#x8BA1;&#x7B97;&#xFF0C;&#x5C31;&#x628A;model&#x653E;&#x5230;GPU&#x4E0A;&#x53BB;&#xFF0C;&#x540E;&#x7EED;&#x5C31;&#x4F1A;&#x7528;GPU&#x8BA1;&#x7B97;
+
+epoches = 1000
+learning_rate = 0.01
+optimizer = torch.optim.SGD(LRModel.parameters(), lr=learning_rate)
+criterion = nn.MSELoss()
+
+for epoch in range(epoches):
+    # ndarray&#x8F6C;&#x5316;&#x6210;tensor&#xFF1B;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53D8;&#x4E3A;float32&#x548C;&#x6A21;&#x578B;&#x6743;&#x91CD;&#x53C2;&#x6570;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#xFF1B;&#x5982;&#x679C;&#x6709;&#x80FD;&#x7528;&#x7684;GPU&#xFF0C;&#x5C31;&#x628A;&#x6570;&#x636E;&#x653E;&#x5230;GPU&#x4E0A;&#x53BB;
+    inputs = torch.from_numpy(x_train).to(torch.float32).to(device)
+    # ndarray&#x8F6C;&#x5316;&#x6210;tensor&#xFF1B;&#x5F62;&#x72B6;&#x53D8;&#x6210;n&#x884C;1&#x5217;&#x7684;&#x77E9;&#x9635;&#xFF1B;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53D8;&#x4E3A;float32&#x548C;&#x6A21;&#x578B;&#x6743;&#x91CD;&#x53C2;&#x6570;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#xFF1B;&#x5982;&#x679C;&#x6709;&#x80FD;&#x7528;&#x7684;GPU&#xFF0C;&#x5C31;&#x628A;&#x6570;&#x636E;&#x653E;&#x5230;GPU&#x4E0A;&#x53BB;  
+    labels = torch.from_numpy(y_train).reshape(-1, 1).to(torch.float32).to(device)
+
+    optimizer.zero_grad() # &#x6BCF;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x68AF;&#x5EA6;&#x8981;&#x6E05;&#x96F6;
+    outputs = LRModel(inputs) # &#x524D;&#x5411;&#x4F20;&#x64AD;
+    loss = criterion(outputs, labels) # &#x8BA1;&#x7B97;&#x635F;&#x5931;
+    loss.backward() # &#x53CD;&#x5411;&#x4F20;&#x64AD;
+    optimizer.step() # &#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x8FED;&#x4EE3;
+
+    if epoch % 100 == 0:
+        print(&quot;epoch {}, loss {}&quot;.format(epoch, loss.item()))
+
+print(&quot;inear.weight: {}&quot;.format(LRModel.linear.weight))    # &#x8F93;&#x51FA;&#x6743;&#x91CD;&#x53C2;&#x6570;
+print(&quot;inear.bias: {}&quot;.format(LRModel.linear.bias))        # &#x8F93;&#x51FA;&#x504F;&#x7F6E;
+```
+
+```
+epoch 0, loss 604.8123168945312
+epoch 100, loss 33.90818786621094
+epoch 200, loss 23.943044662475586
+epoch 300, loss 23.43199920654297
+epoch 400, loss 23.245315551757812
+epoch 500, loss 23.13983154296875
+epoch 600, loss 23.075153350830078
+epoch 700, loss 23.033143997192383
+epoch 800, loss 23.004531860351562
+epoch 900, loss 22.98432159423828
+inear.weight: Parameter containing:
+tensor([[-1.0230,  0.8905, -0.0299,  0.6863, -1.6675,  2.7600,  0.4912, -2.7511,
+          2.2308, -1.3380, -2.1101,  0.9156, -4.4212]], requires_grad=True)
+inear.bias: Parameter containing:
+tensor([23.0076], requires_grad=True)
+```
+
+```python
+x_test_tensor = torch.from_numpy(x_test).to(torch.float32).to(device)  # &#x628A;ndarray&#x8F6C;&#x6210;tensor&#xFF1B;&#x5982;&#x679C;&#x6709;&#x80FD;&#x7528;&#x7684;GPU&#xFF0C;&#x5C31;&#x628A;&#x6570;&#x636E;&#x653E;&#x5230;GPU&#x4E0A;&#x53BB;
+y_test_tensor = torch.from_numpy(y_test).reshape(-1, 1).to(torch.float32).to(device)  # &#x628A;ndarray&#x8F6C;&#x6210;tensor&#xFF1B;&#x5982;&#x679C;&#x6709;&#x80FD;&#x7528;&#x7684;GPU&#xFF0C;&#x5C31;&#x628A;&#x6570;&#x636E;&#x653E;&#x5230;GPU&#x4E0A;&#x53BB;
+y_predict = LRModel(x_test_tensor)
+mse = criterion(y_predict, y_test_tensor) # &#x8BA1;&#x7B97;&#x5747;&#x65B9;&#x8BEF;&#x5DEE;
+print(&quot;Mean squared error: {:.2f}&quot;.format(mse)) # &#x6A21;&#x578B;&#x8BC4;&#x4F30;&#xFF1A;&#x5747;&#x65B9;&#x8BEF;&#x5DEE;
+```
+
+```
+Mean squared error: 20.99
+```
 
 ### &#x9644;1&#xFF1A;&#x6781;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x6CD5;&#x4E0B;&#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;
 
@@ -710,7 +856,7 @@ Coefficient of determination: 0.68
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"线性回归","level":"1.3","depth":1,"next":{"title":"逻辑回归","level":"1.4","depth":1,"path":"LogisticRegression.md","ref":"LogisticRegression.md","articles":[]},"previous":{"title":"梯度下降","level":"1.2","depth":1,"path":"GradientDescent.md","ref":"GradientDescent.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-code","-codeline","-highlight","prism","expandable-chapters","chapter-fold","splitter","back-to-top-button","advanced-emoji","hide-element","insert-logo","custom-favicon","pageview-count","-sharing","sharing-plus","flexible-alerts","katex-new","mygitalk","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{},"styles":{"website":"website.css","ebook":"ebook.css","pdf":"pdf.css","mobi":"ebook.css","epub":"ebook.css"},"katex-new":{},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"pics/logo.ico","theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"mygitalk":{"flipMoveOptions":{},"clientID":"c623ce11cb38fa65e5f0","number":-1,"perPage":10,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","admin":["powerAmore"],"createIssueManually":false,"distractionFreeMode":false,"repo":"DataSciChecklist","owner":"powerAmore","enableHotKey":true,"clientSecret":"09a234dcf2ca63822ea9858aa00245147624e61d","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"all":["douban","facebook","google","twitter","weibo","qq","whatsapp"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"pics/logo.jpeg","style":"background: none; max-height: 30px; min-height: 30px"},"expandable-chapters":{}},"theme":"default","author":"powerlee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据技术与算法Checklist","language":"zh-hans","links":{},"gitbook":"*","description":"大数据技术与算法Checklist"},"file":{"path":"LinearRegression.md","mtime":"2023-01-17T12:55:09.462Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-17T13:33:36.579Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"线性回归","level":"1.3","depth":1,"next":{"title":"逻辑回归","level":"1.4","depth":1,"path":"LogisticRegression.md","ref":"LogisticRegression.md","articles":[]},"previous":{"title":"梯度下降","level":"1.2","depth":1,"path":"GradientDescent.md","ref":"GradientDescent.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-code","-codeline","-highlight","prism","expandable-chapters","chapter-fold","splitter","back-to-top-button","advanced-emoji","hide-element","insert-logo","custom-favicon","pageview-count","-sharing","sharing-plus","flexible-alerts","katex-new","mygitalk","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{},"styles":{"website":"website.css","ebook":"ebook.css","pdf":"pdf.css","mobi":"ebook.css","epub":"ebook.css"},"katex-new":{},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"pics/logo.ico","theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"mygitalk":{"flipMoveOptions":{},"clientID":"c623ce11cb38fa65e5f0","number":-1,"perPage":10,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","admin":["powerAmore"],"createIssueManually":false,"distractionFreeMode":false,"repo":"DataSciChecklist","owner":"powerAmore","enableHotKey":true,"clientSecret":"09a234dcf2ca63822ea9858aa00245147624e61d","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"all":["douban","facebook","google","twitter","weibo","qq","whatsapp"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"pics/logo.jpeg","style":"background: none; max-height: 30px; min-height: 30px"},"expandable-chapters":{}},"theme":"default","author":"powerlee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据技术与算法Checklist","language":"zh-hans","links":{},"gitbook":"*","description":"大数据技术与算法Checklist"},"file":{"path":"LinearRegression.md","mtime":"2023-01-18T13:30:01.871Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-18T13:31:02.704Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
