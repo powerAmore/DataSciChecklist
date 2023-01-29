@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · 大数据技术与算法Checklist</title>
+        <title>Python虚拟环境 · 大数据技术与算法Checklist</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -103,8 +103,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="GradientDescent.html" />
+    <link rel="next" href="GitCheatSheet.html" />
     
+    
+    <link rel="prev" href="ProbabilityAndStatistics.html" />
     
 
     </head>
@@ -133,7 +135,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -341,7 +343,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.17" data-path="PythonVirtualEnv.html">
+        <li class="chapter active" data-level="1.17" data-path="PythonVirtualEnv.html">
             
                 <a href="PythonVirtualEnv.html">
             
@@ -397,7 +399,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >Python虚拟环境</a>
     </h1>
 </div>
 
@@ -412,11 +414,76 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
-<p>&#x5DE5;&#x4F5C;&#x4E2D;&#x6D89;&#x53CA;&#x5230;&#x4E86;&#x6570;&#x636E;&#x9886;&#x57DF;&#x7684;&#x65B9;&#x65B9;&#x9762;&#x9762;&#xFF0C;&#x5305;&#x62EC;&#x5927;&#x6570;&#x636E;&#x6280;&#x672F;&#x3001;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x3001;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x3001;&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x3001;&#x6570;&#x636E;&#x4EA7;&#x54C1;&#x3001;&#x6570;&#x636E;&#x5206;&#x6790;&#x7B49;&#x975E;&#x5E38;&#x591A;&#x7684;&#x9886;&#x57DF;&#x3002;&#x7136;&#x800C;&#x7531;&#x4E8E;&#x5DE5;&#x4F5C;&#x91CD;&#x5FC3;&#x4E0D;&#x65AD;&#x53D8;&#x6362;&#xFF0C;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4E0D;&#x63A5;&#x89E6;&#xFF0C;&#x5F88;&#x591A;&#x9886;&#x57DF;&#x7684;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x9057;&#x5FD8;&#xFF0C;&#x975E;&#x5E38;&#x53EF;&#x60DC;&#x3002;&#x91CD;&#x65B0;&#x67E5;&#x9605;&#x76F8;&#x5173;&#x8D44;&#x6599;&#x975E;&#x5E38;&#x8017;&#x65F6;&#xFF0C;&#x6709;&#x4E9B;&#x57FA;&#x4E8E;&#x81EA;&#x8EAB;&#x7406;&#x89E3;&#x7684;&#x6982;&#x5FF5;&#x60F3;&#x6CD5;&#xFF0C;&#x5373;&#x4F7F;&#x67E5;&#x9605;&#x8D44;&#x6599;&#x4E5F;&#x5E76;&#x4E0D;&#x5BB9;&#x6613;&#x627E;&#x56DE;&#x3002;</p>
-<p>&#x5BF9;&#x4E8E;&#x67E5;&#x9605;&#x8D44;&#x6599;&#x3002;&#x7F51;&#x7EDC;&#x4E0A;&#x5404;&#x79CD;&#x8D44;&#x6599;&#x6559;&#x7A0B;&#x975E;&#x5E38;&#x591A;&#xFF0C;&#x4E5F;&#x4E0D;&#x4E4F;&#x9AD8;&#x8D28;&#x91CF;&#x7684;&#x8BFE;&#x7A0B;&#x3002;&#x4F46;&#x662F;&#x95EE;&#x9898;&#x4E5F;&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x591A;&#x6570;&#x6559;&#x7A0B;&#x9762;&#x5411;&#x521D;&#x5B66;&#x8005;&#xFF0C;&#x6781;&#x5176;&#x7EC6;&#x81F4;&#xFF0C;&#x770B;&#x5B8C;&#x5F80;&#x5F80;&#x9700;&#x8981;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#xFF0C;&#x5B66;&#x4E60;&#x6548;&#x7387;&#x8F83;&#x4F4E;&#x3002;&#x5C24;&#x5176;&#x89C6;&#x9891;&#x6559;&#x7A0B;&#xFF0C;&#x751A;&#x81F3;&#x5F88;&#x96BE;&#x5FEB;&#x901F;&#x76F4;&#x63A5;&#x627E;&#x5230;&#x5173;&#x6CE8;&#x70B9;&#x3002;&#x5BF9;&#x4E8E;&#x5728;&#x8BE5;&#x9886;&#x57DF;&#x5DF2;&#x7ECF;&#x5EFA;&#x7ACB;&#x6574;&#x4F53;&#x6982;&#x5FF5;&#x6846;&#x67B6;&#x7684;&#x4EBA;&#x6765;&#x8BF4;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x5F80;&#x5F80;&#x662F;&#x63D0;&#x7EB2;&#x6308;&#x9886;&#xFF0C;&#x76F4;&#x51FB;&#x8981;&#x5BB3;&#xFF0C;&#x628A;&#x4E66;&#x8BFB;&#x8584;&#x3002;</p>
-<p>&#x6545;&#x505A;&#x6B64;Checklist&#xFF0C;&#x5E2E;&#x52A9;&#x81EA;&#x5DF1;&#x603B;&#x7ED3;&#x5F52;&#x7EB3;&#x77E5;&#x8BC6;&#xFF0C;&#x5373;&#x4F7F;&#x540E;&#x9762;&#x5FD8;&#x8BB0;&#x4E86;&#x4E5F;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x624B;&#x5FD9;&#x811A;&#x4E71;&#x7684;&#x5230;&#x5904;&#x67E5;&#x9605;&#x8D44;&#x6599;&#x3002;&#x4E5F;&#x5E2E;&#x52A9;&#x9700;&#x8981;&#x590D;&#x4E60;&#x76F8;&#x5173;&#x9886;&#x57DF;&#x77E5;&#x8BC6;&#x70B9;&#x7684;&#x5C0F;&#x4F19;&#x4F34;&#x5FEB;&#x901F;&#x6062;&#x590D;&#x8BB0;&#x5FC6;&#x3002;&#x52A1;&#x5FC5;&#x505A;&#x5230;&#x8A00;&#x7B80;&#x610F;&#x8D45;&#xFF0C;&#x7A81;&#x51FA;&#x91CD;&#x70B9;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x53EF;&#x80FD;&#xFF0C;&#x5E0C;&#x671B;&#x80FD;&#x5199;&#x6210;&#x4E00;&#x672C;&#x6570;&#x636E;&#x5DE5;&#x4F5C;&#x8005;&#x5B9E;&#x7528;&#x624B;&#x518C;&#x3002;</p>
+                                <h2 id="venv">venv</h2>
+<p>&#x5728; python3.3 &#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7; virtualenv &#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF0C;&#x9996;&#x5148;&#x9700;&#x8981;<strong>&#x5B89;&#x88C5; virtualenv</strong></p>
+<pre class="language-"><code class="lang-bash">$ pip <span class="token function">install</span> virtualenv
+</code></pre>
+<p><strong>&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x5F53;&#x524D;&#x76EE;&#x5F55;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;myvenv&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5E76;&#x5728;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;</span>
+<span class="token comment"># &#x53C2;&#x6570;--no-site-packages&#x7684;&#x610F;&#x601D;&#x662F;&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x65F6;&#xFF0C;&#x4E0D;&#x590D;&#x5236;&#x4E3B;&#x73AF;&#x5883;&#x4E2D;&#x5DF2;&#x5B89;&#x88C5;&#x7684;&#x5305;&#xFF0C;&#x800C;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x201C;&#x5E72;&#x51C0;&#x7684;&#x201D;&#x865A;&#x62DF;&#x73AF;&#x5883;</span>
+$ virtualenv --no-site-packages myvenv
+<span class="token comment"># &#x6307;&#x5B9A;&#x4E00;&#x4E2A;Python&#x89E3;&#x91CA;&#x5668;</span>
+$ virtualenv <span class="token parameter variable">-p</span> /usr/bin/python2.8 myvenv
+</code></pre>
+<p><strong>&#x8FDB;&#x5165;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x8FDB;&#x5165;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x7684;&#x4E0A;&#x5C42;&#x76EE;&#x5F55;&#xFF0C;&#x8FD0;&#x884C;activate</span>
+$ <span class="token builtin class-name">source</span> ./myvenv/bin/activate
+</code></pre>
+<p><strong>&#x9000;&#x51FA;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x5728;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x9000;&#x51FA;&#x53EA;&#x9700;&#x8981;&#x8F93;&#x5165;deactivate</span>
+<span class="token punctuation">(</span>myvenv<span class="token punctuation">)</span> $ deactivate
+</code></pre>
+<p><strong>&#x5220;&#x9664;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x53EA;&#x9700;&#x8981;&#x5220;&#x9664;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x5373;&#x53EF;</span>
+$ <span class="token function">rm</span> &#x2013;r myvenv
+</code></pre>
+<p>Python3.3 &#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;python&#x81EA;&#x5E26;&#x7684; venv &#x6A21;&#x5757;&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x3002;&#x9664;&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x610F;&#x5916;&#xFF0C;<strong>&#x5176;&#x5B83;&#x8DDF;virtualenv&#x5B8C;&#x5168;&#x4E00;&#x81F4;</strong>&#x3002;</p>
+<p><strong>&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x5F53;&#x524D;&#x76EE;&#x5F55;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;myvenv&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5E76;&#x5728;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;</span>
+$ python <span class="token parameter variable">-m</span> venv myvenv
+</code></pre>
+<h2 id="conda">conda</h2>
+<p>&#x5982;&#x679C;&#x5B89;&#x88C5;&#x4E86;Anaconda&#xFF0C;&#x53EF;&#x4EE5;&#x7528;conda&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x3002;</p>
+<p><strong>&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x5728;Anaconda&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;envs&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x521B;&#x5EFA;&#x540D;&#x4E3A;myvenv&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x5728;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF0C;&#x540C;&#x65F6;&#x8BBE;&#x5B9A;&#x8BE5;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x7684;python&#x7248;&#x672C;</span>
+$ conda create <span class="token parameter variable">-n</span> myvenv <span class="token assign-left variable">python</span><span class="token operator">=</span>x.x
+</code></pre>
+<p><strong>&#x5207;&#x6362;&#x81F3;&#x67D0;&#x4E2A;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x5207;&#x6362;&#x81F3;&#x540D;&#x4E3A;yourenv&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;</span>
+$ conda activate yourenv
+$ <span class="token builtin class-name">source</span> activate yourenv  <span class="token comment"># source&#x4E5F;&#x53EF;&#x4EE5;</span>
+</code></pre>
+<p><strong>&#x9000;&#x51FA;&#x67D0;&#x4E2A;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x5728;&#x67D0;&#x4E2A;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4E0B;&#x952E;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x9000;&#x51FA;&#x865A;&#x62DF;&#x73AF;&#x5883;</span>
+<span class="token punctuation">(</span>yourenv<span class="token punctuation">)</span> $ conda deactivate
+<span class="token punctuation">(</span>yourenv<span class="token punctuation">)</span> $ <span class="token builtin class-name">source</span> deactivate  <span class="token comment"># &#x9AD8;&#x7248;&#x672C;Anaconda&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;</span>
+</code></pre>
+<p><strong>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x5B58;&#x5728;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
+<pre class="language-"><code class="lang-bash">$ conda <span class="token function">env</span> list 
+$ conda info <span class="token parameter variable">-e</span>
+</code></pre>
+<p><strong>&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5B89;&#x88C5;&#x5305;</strong></p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x4E3A;myvenv&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5B89;&#x88C5;numpy</span>
+$ conda <span class="token function">install</span> <span class="token parameter variable">-n</span> myvenv numpy
+
+<span class="token comment"># &#x4E5F;&#x53EF;&#x4EE5;&#x5148;&#x8FDB;&#x5165;&#x8BE5;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF0C;&#x76F4;&#x63A5;&#x5728;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4E0B;&#x5B89;&#x88C5;</span>
+<span class="token punctuation">(</span>yourenv<span class="token punctuation">)</span> $ conda <span class="token function">install</span> numpy
+</code></pre>
+<p><strong>&#x5220;&#x9664;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
+<pre class="language-"><code class="lang-bash">$ conda remove <span class="token parameter variable">--name</span> myvenv <span class="token parameter variable">--all</span>
+</code></pre>
+<p><strong>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x5B89;&#x88C5;&#x7684;&#x5305;</strong></p>
+<pre class="language-"><code class="lang-bash">$ conda list
+</code></pre>
+<p><strong>&#x67E5;&#x770B;&#x955C;&#x50CF;&#x6E90;channels</strong></p>
+<pre class="language-"><code class="lang-bash">$ conda config <span class="token parameter variable">--get</span> channels
+</code></pre>
+<p><strong>&#x6DFB;&#x52A0;&#x955C;&#x50CF;&#x6E90;</strong></p>
+<pre class="language-"><code class="lang-bash">$ conda config <span class="token parameter variable">--add</span> channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+</code></pre>
+<p><strong>&#x5220;&#x9664;&#x955C;&#x50CF;&#x6E90;</strong></p>
+<pre class="language-"><code class="lang-bash">$ conda config <span class="token parameter variable">--remove</span> channels channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+</code></pre>
 <div id="gitalk-container"></div>
                                 
                                 </section>
@@ -444,8 +511,12 @@
 
             
                 
+                <a href="ProbabilityAndStatistics.html" class="navigation navigation-prev " aria-label="Previous page: 概率论与数理统计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="GradientDescent.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 梯度下降">
+                
+                <a href="GitCheatSheet.html" class="navigation navigation-next " aria-label="Next page: Git Cheat Sheet">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -456,7 +527,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"梯度下降","level":"1.2","depth":1,"path":"GradientDescent.md","ref":"GradientDescent.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-code","-codeline","-highlight","prism","expandable-chapters","chapter-fold","splitter","back-to-top-button","advanced-emoji","hide-element","insert-logo","custom-favicon","pageview-count","-sharing","sharing-plus","flexible-alerts","katex-new","mygitalk","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{},"styles":{"website":"website.css","ebook":"ebook.css","pdf":"pdf.css","mobi":"ebook.css","epub":"ebook.css"},"katex-new":{},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"pics/logo.ico","theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"mygitalk":{"flipMoveOptions":{},"clientID":"c623ce11cb38fa65e5f0","number":-1,"perPage":10,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","admin":["powerAmore"],"createIssueManually":false,"distractionFreeMode":false,"repo":"DataSciChecklist","owner":"powerAmore","enableHotKey":true,"clientSecret":"09a234dcf2ca63822ea9858aa00245147624e61d","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"all":["douban","facebook","google","twitter","weibo","qq","whatsapp"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"pics/logo.jpeg","style":"background: none; max-height: 30px; min-height: 30px"},"expandable-chapters":{}},"theme":"default","author":"powerlee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据技术与算法Checklist","language":"zh-hans","links":{},"gitbook":"*","description":"大数据技术与算法Checklist"},"file":{"path":"README.md","mtime":"2023-01-24T08:07:55.427Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-29T14:23:15.851Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python虚拟环境","level":"1.17","depth":1,"next":{"title":"Git Cheat Sheet","level":"1.18","depth":1,"path":"GitCheatSheet.md","ref":"GitCheatSheet.md","articles":[]},"previous":{"title":"概率论与数理统计","level":"1.16","depth":1,"path":"ProbabilityAndStatistics.md","ref":"ProbabilityAndStatistics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-code","-codeline","-highlight","prism","expandable-chapters","chapter-fold","splitter","back-to-top-button","advanced-emoji","hide-element","insert-logo","custom-favicon","pageview-count","-sharing","sharing-plus","flexible-alerts","katex-new","mygitalk","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{},"styles":{"website":"website.css","ebook":"ebook.css","pdf":"pdf.css","mobi":"ebook.css","epub":"ebook.css"},"katex-new":{},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"pics/logo.ico","theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"mygitalk":{"flipMoveOptions":{},"clientID":"c623ce11cb38fa65e5f0","number":-1,"perPage":10,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","admin":["powerAmore"],"createIssueManually":false,"distractionFreeMode":false,"repo":"DataSciChecklist","owner":"powerAmore","enableHotKey":true,"clientSecret":"09a234dcf2ca63822ea9858aa00245147624e61d","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"all":["douban","facebook","google","twitter","weibo","qq","whatsapp"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"pics/logo.jpeg","style":"background: none; max-height: 30px; min-height: 30px"},"expandable-chapters":{}},"theme":"default","author":"powerlee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据技术与算法Checklist","language":"zh-hans","links":{},"gitbook":"*","description":"大数据技术与算法Checklist"},"file":{"path":"PythonVirtualEnv.md","mtime":"2023-01-29T14:13:14.120Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-29T14:23:15.851Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
