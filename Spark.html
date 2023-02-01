@@ -575,13 +575,14 @@ conf <span class="token operator">=</span> SparkConf<span class="token punctuati
 sc<span class="token operator">=</span>SparkContext<span class="token punctuation">(</span>conf<span class="token operator">=</span>conf<span class="token punctuation">)</span>
 </code></pre>
 </li>
-<li><p><code>SparkSession</code></p>
-<ul>
-<li><p>Spark2.0&#x4E4B;&#x540E;&#x4F5C;&#x4E3A;Spark&#x7A0B;&#x5E8F;&#x7684;&#x7EDF;&#x4E00;&#x5165;&#x53E3;</p>
+<li><p><code>SparkSession</code>&#xFF1A;Spark2.0&#x4E4B;&#x540E;&#x4F5C;&#x4E3A;Spark&#x7A0B;&#x5E8F;&#x7684;&#x7EDF;&#x4E00;&#x5165;&#x53E3;</p>
 <ul>
 <li>RDD&#x7F16;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;<code>SparkSession</code>&#x5BF9;&#x8C61;&#x4E2D;&#x83B7;&#x53D6;&#x5230;<code>SparkContext</code></li>
-<li>SparkSQL&#x76F4;&#x63A5;&#x7684;&#x7F16;&#x7A0B;&#x5165;&#x53E3;</li>
-</ul>
+<li><p>SparkSQL&#x76F4;&#x63A5;&#x7684;&#x7F16;&#x7A0B;&#x5165;&#x53E3;</p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">from</span> pyspark<span class="token punctuation">.</span>sql <span class="token keyword">import</span> SparkSession
+spark <span class="token operator">=</span> SparkSession<span class="token punctuation">.</span>builder<span class="token punctuation">.</span>appName<span class="token punctuation">(</span><span class="token string">&quot;dataframe&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>master<span class="token punctuation">(</span><span class="token string">&quot;local[*]&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getOrCreate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sc <span class="token operator">=</span> spark<span class="token punctuation">.</span>sparkContext
+</code></pre>
 </li>
 </ul>
 </li>
@@ -1021,59 +1022,85 @@ rdd3<span class="token punctuation">.</span>collect<span class="token punctuatio
 </code></pre>
 <pre class="language-"><code>count:  20
 </code></pre><h3 id="&#x5185;&#x6838;&#x8C03;&#x5EA6;">&#x5185;&#x6838;&#x8C03;&#x5EA6;</h3>
+<h4 id="dag">DAG</h4>
+<p>Spark&#x7684;&#x6838;&#x5FC3;&#x662F;&#x6839;&#x636E;RDD&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;Spark Scheduler&#x5219;&#x4E3A;Spark&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x7684;&#x91CD;&#x8981;&#x4E00;&#x73AF;&#xFF0C;&#x5176;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x3002;Spark&#x7684;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x5C31;&#x662F;&#x5982;&#x4F55;&#x7EC4;&#x7EC7;&#x4EFB;&#x52A1;&#x53BB;&#x5904;&#x7406;RDD&#x4E2D;&#x6BCF;&#x4E2A;&#x5206;&#x533A;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6839;&#x636E;RDD&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x6784;&#x5EFA;DAG&#xFF0C;&#x57FA;&#x4E8E;DAG&#x5212;&#x5206;Stage&#xFF0C;&#x5C06;&#x6BCF;&#x4E2A;Stage&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x53D1;&#x5230;&#x6307;&#x5B9A;&#x8282;&#x70B9;&#x8FD0;&#x884C;&#x3002;&#x57FA;&#x4E8E;Spark&#x7684;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x539F;&#x7406;&#xFF0C;&#x53EF;&#x4EE5;&#x5408;&#x7406;&#x89C4;&#x5212;&#x8D44;&#x6E90;&#x5229;&#x7528;&#xFF0C;&#x505A;&#x5230;&#x5C3D;&#x53EF;&#x80FD;&#x7528;&#x6700;&#x5C11;&#x7684;&#x8D44;&#x6E90;&#x9AD8;&#x6548;&#x5730;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>&#x6240;&#x8C13;DAG&#x5C31;&#x662F;&#x6709;&#x5411;&#x65E0;&#x73AF;&#x56FE;&#xFF0C;&#x7528;&#x6765;&#x8868;&#x73B0;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x7684;&#x6D41;&#x7A0B;&#x3002;DAG&#x662F;Spark&#x4EE3;&#x7801;&#x7684;&#x903B;&#x8F91;&#x6267;&#x884C;&#x56FE;&#xFF0C;DAG&#x7684;&#x6700;&#x7EC8;&#x4F5C;&#x7528;&#x662F;&#x4E3A;&#x4E86;&#x6784;&#x5EFA;&#x7269;&#x7406;&#x4E0A;&#x7684;Spark&#x8BE6;&#x7EC6;&#x6267;&#x884C;&#x8BA1;&#x5212;&#x3002;&#x4EE5;&#x8BCD;&#x9891;&#x7EDF;&#x8BA1;WordCount&#x7A0B;&#x5E8F;&#x4E3A;&#x4F8B;&#xFF0C;&#x4EE5;&#x4E0B;&#x4E3A;&#x5176;DAG&#x56FE;&#xFF1A;</p>
+<p><img src="pics/Spark/WordCountDAG.png" alt="image-20230201104602173" style="zoom:80%;"></p>
+<p>&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#xFF0C;&#x5728;Spark&#x4E2D;&#x79F0;&#x4E4B;&#x4E3A;&#x4E00;&#x4E2A;Application&#x3002;&#x6BCF;&#x4E2A;Application&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;Job&#x3002;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;Action&#x7B97;&#x5B50;&#x90FD;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;Job&#xFF0C;&#x6BCF;&#x4E2A;Job&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;DAG&#x56FE;&#x3002;</p>
+<h4 id="&#x5BBD;&#x7A84;&#x4F9D;&#x8D56;">&#x5BBD;&#x7A84;&#x4F9D;&#x8D56;</h4>
 <ul>
-<li><p>1&#x4E2A;Action = 1&#x4E2A;DAG = 1&#x4E2A;Job</p>
-<ul>
-<li>&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x5199;&#x4E86;3&#x4E2A;Action&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#x5C31;&#x6709;3&#x4E2A;Job&#xFF0C;&#x6BCF;&#x4E2A;Job&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;DAG</li>
-<li>&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#xFF0C;&#x5728;spark&#x4E2D;&#x79F0;&#x4E4B;&#x4E3A;&#xFF1A;Application</li>
+<li><strong>&#x7A84;&#x4F9D;&#x8D56;</strong>&#xFF1A;&#x7236;RDD&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x5168;&#x90E8;&#x5C06;&#x6570;&#x636E;&#x53D1;&#x9001;&#x7ED9;&#x5B50;RDD&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x533A;</li>
+<li><strong>&#x5BBD;&#x4F9D;&#x8D56;</strong>&#xFF1A;&#x7236;RDD&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x7FA4;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x53D1;&#x9001;&#x7ED9;&#x5B50;RDD&#x7684;&#x591A;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;Shuffle</li>
 </ul>
-</li>
-<li><p>DAG&#x7684;&#x5BBD;&#x7A84;&#x4F9D;&#x8D56;</p>
-<ul>
-<li>&#x7A84;&#x4F9D;&#x8D56;&#xFF1A;&#x7236;RDD&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x5168;&#x90E8;&#x5C06;&#x6570;&#x636E;&#x53D1;&#x9001;&#x7ED9;&#x5B50;RDD&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x533A;</li>
-<li><p>&#x5BBD;&#x4F9D;&#x8D56;&#xFF1A;&#x7236;RDD&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x7FA4;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x53D1;&#x9001;&#x7ED9;&#x5B50;RDD&#x7684;&#x591A;&#x4E2A;&#x5206;&#x533A;</p>
-<ul>
-<li>shuffle</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Stage&#x5212;&#x5206;</p>
-<ul>
-<li><p>DAG&#x4ECE;&#x540E;&#x5F80;&#x524D;&#xFF0C;&#x9047;&#x5230;&#x5BBD;&#x4F9D;&#x8D56;&#x5C31;&#x5212;&#x5206;&#x51FA;&#x6765;&#x4E00;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x79F0;&#x4E3A;Stage</p>
-<ul>
-<li>&#x5728;Stage&#x5185;&#x90E8;&#x4E00;&#x5B9A;&#x90FD;&#x662F;&#x7A84;&#x4F9D;&#x8D56;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>task</p>
-<ul>
-<li></li>
-</ul>
-</li>
-<li><p>&#x8FD0;&#x884C;&#x65F6;&#x5C42;&#x7EA7;&#x5173;&#x7CFB;&#x68B3;&#x7406;</p>
-<ul>
-<li></li>
-</ul>
-</li>
-</ul>
+<p><img src="pics/Spark/NarrowWideDeps.png" alt="img" style="zoom:100%;"></p>
+<p>&#x5BF9;&#x4E8E;Spark&#x6765;&#x8BF4;&#xFF0C;&#x4F1A;&#x6839;&#x636E;DAG&#x56FE;&#xFF0C;&#x6309;&#x7167;<strong>&#x5BBD;&#x4F9D;&#x8D56;</strong>&#x5212;&#x5206;&#x4E0D;&#x540C;&#x7684;DAG&#x9636;&#x6BB5;&#x3002;&#x5212;&#x5206;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#xFF1A;&#x4ECE;&#x540E;&#x5F80;&#x524D;&#xFF0C;&#x9047;&#x5230;<strong>&#x5BBD;&#x4F9D;&#x8D56;</strong>&#x5C31;&#x5212;&#x5206;&#x51FA;&#x4E00;&#x4E2A;&#x9636;&#x6BB5;&#x79F0;&#x4E4B;&#x4E3A;<strong>Stage</strong>&#x3002;</p>
+<p><img src="pics/Spark/Stage.png" alt="image-20230201111733287" style="zoom:100%;"></p>
+<p>&#x5982;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5728;DAG&#x4E2D;&#xFF0C;&#x57FA;&#x4E8E;<strong>&#x5BBD;&#x4F9D;&#x8D56;</strong>&#x5C06;DAG&#x5212;&#x5206;&#x6210;&#x4E86;2&#x4E2A;Stage&#x3002;&#x5728;&#x6BCF;&#x4E2A;Stage&#x5185;&#x90E8;&#xFF0C;&#x4E00;&#x5B9A;&#x90FD;&#x662F;<strong>&#x7A84;&#x4F9D;&#x8D56;</strong>&#x3002;</p>
+<h4 id="&#x5185;&#x5B58;&#x8FED;&#x4EE3;&#x8BA1;&#x7B97;">&#x5185;&#x5B58;&#x8FED;&#x4EE3;&#x8BA1;&#x7B97;</h4>
+<p>&#x4E0B;&#x56FE;&#x4E3A;&#x5E26;&#x6709;&#x5206;&#x533A;&#x7684;DAG&#x56FE;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF1A;Task1&#x3001;Task2&#x3001;Task3&#x8FD9;&#x4E09;&#x4E2A;Task&#x5F62;&#x6210;&#x4E86;&#x4E09;&#x4E2A;&#x5E76;&#x884C;&#x7684;&#x5185;&#x5B58;&#x8BA1;&#x7B97;&#x7BA1;&#x9053;&#x3002;&#x5728;<strong>&#x7A84;&#x4F9D;&#x8D56;</strong>&#x5185;&#x6BCF;&#x4E2A;RDD&#x7684;&#x5206;&#x533A;&#x8FED;&#x4EE3;&#x8BA1;&#x7B97;&#xFF08;&#x4ECE;RDD1&#x76F4;&#x5230;RDD3&#xFF09;&#x90FD;&#x7531;&#x540C;&#x4E00;&#x4E2A;Task&#x8D1F;&#x8D23;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;Task&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x8FDB;&#x884C;&#x7EAF;&#x5185;&#x5B58;&#x7684;&#x8BA1;&#x7B97;&#x3002;</p>
+<p><img src="pics/Spark/Task.png" alt="image-20230201113405156" style="zoom:80%;"></p>
+<p>&#x4EE5;&#x4E0B;&#x4E3A;&#x5185;&#x5B58;&#x8FED;&#x4EE3;&#x8BA1;&#x7B97;&#x7684;&#x5C42;&#x7EA7;&#x5173;&#x7CFB;&#x68B3;&#x7406;&#xFF1A;</p>
+<ol>
+<li>&#x4E00;&#x4E2A;Spark&#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x8FD0;&#x884C;&#x591A;&#x4E2A;Application</li>
+<li>&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#x5C31;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;Application</li>
+<li>&#x6BCF;&#x4E2A;Application&#x5185;&#x90E8;&#x53EF;&#x4EE5;&#x6709;&#x591A;Job</li>
+<li>&#x6BCF;&#x4E2A;Job&#x7531;&#x4E00;&#x4E2A;Action&#x4EA7;&#x751F;&#xFF0C;&#x5E76;&#x4E14;&#x6BCF;&#x4E2A;Job&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;DAG&#x6267;&#x884C;&#x56FE;</li>
+<li>Job&#x7684;DAG&#x56FE;&#x4F1A;&#x57FA;&#x4E8E;&#x5BBD;&#x7A84;&#x4F9D;&#x8D56;&#x5212;&#x5206;&#x6210;&#x4E0D;&#x540C;&#x7684;Stage</li>
+<li>&#x4E0D;&#x540C;Stage&#x5185;&#x57FA;&#x4E8E;&#x5206;&#x533A;&#x6570;&#x91CF;&#xFF0C;&#x5F62;&#x6210;&#x591A;&#x4E2A;&#x5E76;&#x884C;&#x7684;&#x5185;&#x5B58;&#x8FED;&#x4EE3;&#x7BA1;&#x9053;</li>
+<li>&#x6BCF;&#x4E2A;&#x5185;&#x5B58;&#x8FED;&#x4EE3;&#x7BA1;&#x9053;&#x5C31;&#x662F;&#x4E00;&#x4E2A;Task&#xFF08;DAG&#x8C03;&#x5EA6;&#x5668;&#x5C06;Job&#x5212;&#x5206;&#x51FA;&#x5177;&#x4F53;&#x7684;Task&#x4EFB;&#x52A1;&#xFF0C;&#x8FD9;&#x4E9B;Task&#x4EFB;&#x52A1;&#x5728;&#x903B;&#x8F91;&#x4E0A;&#x79F0;&#x4E4B;&#x4E3A;&#x8FD9;&#x4E2A;Job&#x7684;<code>taskset</code>&#xFF09;</li>
+</ol>
+<h4 id="&#x5E76;&#x884C;&#x5EA6;">&#x5E76;&#x884C;&#x5EA6;</h4>
+<p>Spark&#x7684;&#x5E76;&#x884C;&#x5EA6;&#x7684;&#x542B;&#x4E49;&#x662F;&#xFF1A;&#x5728;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x6700;&#x591A;&#x6709;&#x591A;&#x5C11;&#x4E2A;task&#x5728;&#x540C;&#x65F6;&#x8FD0;&#x884C;&#x3002;&#x5982;&#x679C;task&#x7684;&#x5E76;&#x884C;&#x5EA6;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;n&#xFF0C;&#x5219;RDD&#x7684;&#x5206;&#x533A;&#x4E5F;&#x4F1A;&#x88AB;&#x89C4;&#x5212;&#x4E3A;n&#x4E2A;&#x5206;&#x533A;&#x3002;</p>
+<p>&#x5E76;&#x884C;&#x5EA6;&#x53EF;&#x4EE5;&#x5728;Spark&#x4EE3;&#x7801;&#x3001;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4EA4;&#x7A0B;&#x5E8F;&#x65F6;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x4E2D;&#x8BBE;&#x7F6E;&#x3002;&#x5177;&#x4F53;&#x4F18;&#x5148;&#x7EA7;&#x4ECE;&#x9AD8;&#x5230;&#x4F4E;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<ol>
+<li>&#x4EE3;&#x7801;</li>
+<li>&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;</li>
+<li>&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+<li>&#x9ED8;&#x8BA4;&#xFF08;&#x57FA;&#x4E8E;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x7684;&#x5206;&#x7247;&#x6570;&#x91CF;&#x4F5C;&#x4E3A;&#x9ED8;&#x8BA4;&#x5E76;&#x884C;&#x5EA6;&#xFF0C;&#x6216;&#x8005;&#x4E3A;1&#xFF09;</li>
+</ol>
+<p>&#x4EE5;&#x4E0B;&#x4E3A;<strong>&#x5168;&#x5C40;&#x5E76;&#x884C;&#x5EA6;</strong>&#x7684;&#x8BBE;&#x7F6E;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+<span class="token comment"># conf/spark-defaults.conf&#x4E2D;&#x8BBE;&#x7F6E;</span>
+spark.default.parallelism <span class="token number">100</span>
+
+<span class="token comment"># &#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4EA4;&#x7A0B;&#x5E8F;&#x65F6;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;</span>
+bin/spark-submit <span class="token parameter variable">--conf</span> <span class="token string">&quot;spark.default.parallelism=100&quot;</span>
+
+<span class="token comment"># &#x4EE3;&#x7801;&#x4E2D;</span>
+conf <span class="token operator">=</span> SparkConf<span class="token punctuation">(</span><span class="token punctuation">)</span>
+conf.set<span class="token punctuation">(</span><span class="token string">&quot;spark.default.parallelism&quot;</span>, <span class="token string">&quot;100&quot;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x5728;&#x4EE3;&#x7801;&#x4E2D;<code>repartion</code> &#x3001;<code>coalesce</code>&#x3001; <code>partitionBy</code>&#x7B97;&#x5B50;&#x4E5F;&#x53EF;&#x4EE5;&#x9488;&#x5BF9;RDD&#x7684;&#x5E76;&#x884C;&#x5EA6;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x5728;&#x5B9E;&#x9645;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x5E76;&#x884C;&#x5EA6;&#x8BBE;&#x7F6E;&#x3002;&#x800C;&#x4E0D;&#x662F;&#x4E13;&#x95E8;&#x4FEE;&#x6539;RDD&#x7684;&#x5206;&#x533A;&#x3002;&#x56E0;&#x4E3A;&#x53EF;&#x80FD;&#x4F1A;&#x5F71;&#x54CD;&#x5185;&#x5B58;&#x8FED;&#x4EE3;&#x7BA1;&#x9053;&#x7684;&#x6784;&#x5EFA;&#xFF0C;&#x6216;&#x8005;&#x4EA7;&#x751F;&#x989D;&#x5916;&#x7684;Shuffle&#x3002;</p>
+<p>&#x6574;&#x4E2A;Spark&#x96C6;&#x7FA4;&#x7684;&#x5E76;&#x884C;&#x5EA6;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x7684;CPU&#x6838;&#x6570;&#x6765;&#x786E;&#x5B9A;&#xFF0C;&#x5927;&#x6982;&#x662F;CPU&#x603B;&#x6838;&#x5FC3;&#x6570;&#x7684;2~10&#x500D;&#x3002;&#x5355;&#x4E2A;Application&#x8BBE;&#x7F6E;&#x5E76;&#x884C;&#x5EA6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x53C2;&#x8003;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x7684;&#x8D1F;&#x8F7D;&#x60C5;&#x51B5;&#x3002;&#x901A;&#x5E38;&#x5355;&#x4E2A;Application&#x7684;&#x5E76;&#x884C;&#x5EA6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5176;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x5206;&#x7247;&#x7684;&#x6570;&#x91CF;&#x4F5C;&#x4E3A;&#x6700;&#x5C0F;&#x7684;&#x5E76;&#x884C;&#x5EA6;&#x3002;</p>
+<h4 id="&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;">&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;</h4>
+<p>&#x5982;&#x56FE;&#x6240;&#x793A;&#xFF0C;Spark&#x7A0B;&#x5E8F;&#x7684;&#x8C03;&#x5EA6;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>Driver&#x88AB;&#x6784;&#x5EFA;&#x51FA;&#x6765;</li>
+<li>&#x6784;&#x5EFA;SparkContext&#xFF08;&#x6267;&#x884C;&#x73AF;&#x5883;&#x5165;&#x53E3;&#x5BF9;&#x8C61;&#xFF09;</li>
+<li>&#x57FA;&#x4E8E;DAG Scheduler&#xFF08;DAG&#x8C03;&#x5EA6;&#x5668;&#xFF09;&#x6784;&#x5EFA;&#x903B;&#x8F91;Task&#x5206;&#x914D;</li>
+<li>&#x57FA;&#x4E8E;Task Scheduler&#xFF08;Task&#x8C03;&#x5EA6;&#x5668;&#xFF09;&#x5C06;&#x903B;&#x8F91;Task&#x5206;&#x914D;&#x5230;&#x5404;&#x4E2A;Executor&#x4E0A;&#x5E72;&#x6D3B;&#xFF0C;&#x5E76;&#x76D1;&#x63A7;&#x5B83;&#x4EEC;</li>
+<li>Worker&#xFF08;Executor&#xFF09;&#x88AB;TaskScheduler&#x7BA1;&#x7406;&#x76D1;&#x63A7;&#xFF0C;&#x542C;&#x4ECE;&#x5B83;&#x4EEC;&#x7684;&#x6307;&#x4EE4;&#x5E72;&#x6D3B;&#xFF0C;&#x5E76;&#x5B9A;&#x671F;&#x6C47;&#x62A5;&#x8FDB;&#x5EA6;</li>
+</ol>
+<p><img src="pics/Spark/Scheduler.png" alt="image-20230201135123800" style="zoom:100%;"></p>
+<h4 id="spark-shuffle">Spark Shuffle</h4>
+<p>To do</p>
 <h2 id="dataframesparksql">DataFrame/SparkSQL</h2>
+<p>DataFrame&#x662F;&#x4ECE;Spark 1.3&#x7248;&#x672C;&#x5F00;&#x59CB;&#x5F15;&#x5165;&#x7684;&#x3002;&#x901A;&#x8FC7;DataFrame&#x53EF;&#x4EE5;&#x7B80;&#x5316;Spark&#x7A0B;&#x5E8F;&#x7684;&#x5F00;&#x53D1;&#xFF0C;&#x8BA9;Spark&#x5904;&#x7406;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x53D8;&#x5F97;&#x66F4;&#x7B80;&#x5355;&#x3002;DataFrame&#x53EF;&#x4EE5;&#x4F7F;&#x7528;SQL&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5904;&#x7406;&#x6570;&#x636E;&#x3002;</p>
+<p>DataFrame&#x548C;RDD&#x6709;&#x4E00;&#x4E9B;&#x5171;&#x540C;&#x70B9;&#xFF0C;&#x4E5F;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x6570;&#x636E;&#x96C6;&#x3002;&#x4F46;&#x4E0E;RDD&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x662F;&#xFF0C;DataFrame&#x662F;&#x6709;schema&#x7684;&#xFF0C;&#x6709;&#x70B9;&#x7C7B;&#x4F3C;&#x4E8E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;<strong>&#x8868;</strong>&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;&#x6709;&#x4E86;schema&#xFF0C;&#x8FD9;&#x4E5F;&#x8868;&#x660E;&#x4E86;DataFrame&#x662F;&#x6BD4;RDD&#x63D0;&#x4F9B;&#x66F4;&#x9AD8;&#x5C42;&#x6B21;&#x7684;&#x62BD;&#x8C61;&#x3002;&#x540C;&#x6837;&#x56E0;&#x4E3A;&#x6709;&#x4E86;schema&#xFF0C;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x65E0;&#x9700;&#x5B58;&#x50A8;schema&#xFF0C;&#x8FD9;&#x6837;&#x8282;&#x7701;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x7A7A;&#x95F4;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;DataFrame&#x5F15;&#x5165;off-heap&#xFF08;&#x5806;&#x5916;&#x5185;&#x5B58;&#xFF09;&#xFF0C;&#x6446;&#x8131;&#x4E86;JVM&#x5BF9;&#x5185;&#x5B58;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x4E0D;&#x53D7;GC&#x7684;&#x56F0;&#x6270;&#x3002;</p>
+<p>&#x4F46;&#x662F;DataFrame&#x4E0D;&#x662F;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x7684;&#x3002;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x7684;&#x95EE;&#x9898;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x662F;&#x65E0;&#x6CD5;&#x53D1;&#x73B0;&#x7684;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x65F6;&#x624D;&#x4F1A;&#x62A5;&#x9519;&#x3002;&#x589E;&#x52A0;&#x4E86;&#x7EBF;&#x4E0A;&#x51FA;&#x9519;&#x7684;&#x6982;&#x7387;&#x548C;&#x9519;&#x8BEF;&#x6392;&#x9664;&#x7684;&#x96BE;&#x5EA6;&#x3002;</p>
+<p>Spark&#x4ECE;1.6&#x7248;&#x672C;&#x5F15;&#x5165;&#x4E86;DataSet&#x3002;DataSet&#x4E0D;&#x4EC5;&#x62E5;&#x6709;DataFrame&#x7684;&#x4F18;&#x70B9;&#xFF0C;&#x540C;&#x65F6;&#x662F;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x7684;&#x3002;&#x5230;&#x4E86;2.0&#x7248;&#x672C;&#xFF0C;Spark&#x5C06;DataFrame&#x548C;DataSet&#x7684;API&#x8FDB;&#x884C;&#x4E86;&#x5408;&#x5E76;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x8DE8;&#x5E93;&#x7EDF;&#x4E00;&#x6210;&#x4E3A;&#x4E00;&#x5957;API&#x3002;</p>
+<pre class="language-"><code class="lang-Java">package object sql {
+  // ...
+  type DataFrame = Dataset[Row]
+}
+</code></pre>
+<p>&#x4ECE;&#x4EE5;&#x4E0A;Spark 2.0&#x7684;&#x6E90;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x8C03;&#x7528;DataFrame&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x5728;&#x8C03;&#x7528;DataSet&#x3002;</p>
+<p>DataSet&#x5E76;&#x4E0D;&#x63D0;&#x4F9B;Python&#x548C;R&#x7684;API&#xFF0C;&#x56E0;&#x4E3A;Python&#x548C;R&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x5F31;&#x7C7B;&#x578B;&#x7684;&#x3002;Python&#x548C;R&#x53EA;&#x80FD;&#x4F7F;&#x7528;DataFrame API&#x3002;</p>
 <h3 id="rdd-vs-dataframe">RDD VS DataFrame</h3>
-<ul>
-<li></li>
-<li>DataFrame&#x5F15;&#x5165;off-heap&#xFF0C;&#x6446;&#x8131;&#x4E86;JVM&#x5BF9;&#x5185;&#x5B58;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x4E0D;&#x53D7;GC&#x7684;&#x56F0;&#x6270;</li>
-</ul>
-<h3 id="pandas-dataframe-vs-spark-dataframe">Pandas DataFrame VS Spark DataFrame</h3>
-<ul>
-<li><ul>
-<li>Immuatable&#xFF1A;&#x4E00;&#x65E6;RDD&#x3001;DataFrame&#x88AB;&#x521B;&#x5EFA;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x66F4;&#x6539;&#xFF0C;&#x53EA;&#x80FD;&#x901A;&#x8FC7;transformation&#x751F;&#x6210;&#x65B0;&#x7684;RDD&#x3001;DataFrame</li>
-</ul>
-</li>
-<li>Lazy Evaluations&#xFF1A;&#x53EA;&#x6709;action&#x624D;&#x4F1A;&#x89E6;&#x53D1;Transformation&#x7684;&#x6267;&#x884C;</li>
-<li>Distributed&#xFF1A;DataFrame&#x548C;RDD&#x4E00;&#x6837;&#x90FD;&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7684;</li>
-<li>Pandas rich API&#xFF1A;&#x6BD4;Spark SQL api&#x4E30;&#x5BCC;</li>
-</ul>
+<p>&#x4EE5;&#x4E0B;&#x662F;DataFrame&#x548C;RDD&#x8FD0;&#x884C;&#x65F6;&#x6548;&#x7387;&#x7684;&#x5BF9;&#x6BD4;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x51FA;DataFrame&#x660E;&#x663E;&#x9AD8;&#x4E8E;RDD&#x3002;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x4F7F;&#x7528;DataFrame&#x65F6;&#xFF0C;&#x5373;&#x4F7F;&#x662F;&#x7528;&#x7684;python API&#xFF0C;&#x6548;&#x7387;&#x4E5F;&#x4E1D;&#x6BEB;&#x4E0D;&#x5F31;&#x4E8E;Java API&#x3002;</p>
+<p><img src="pics/Spark/RDDvsDataFrame.png" alt="image-20230201140859061" style="zoom:80%;"></p>
 <h3 id="dataframe-vs-dataset">DataFrame VS DataSet</h3>
 <ul>
 <li><p>RDD (Spark1.0) &#x2014;&gt; Dataframe(Spark1.3) &#x2014;&gt; Dataset(Spark1.6)</p>
@@ -1083,28 +1110,145 @@ rdd3<span class="token punctuation">.</span>collect<span class="token punctuatio
 </li>
 <li><p>DataSet&#x662F;&#x5E26;&#x6CDB;&#x578B;&#x7684;DataFrame</p>
 <ul>
-<li>DataSet&#x4E0D;&#x652F;&#x6301;Python&#x548C;R&#xFF0C;&#x4EE5;&#x4E3A;&#x5B83;&#x4EEC;&#x662F;&#x5F31;&#x7C7B;&#x578B;&#x7684;</li>
+<li>DataSet&#x4E0D;&#x652F;&#x6301;Python&#x548C;R&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x662F;&#x5F31;&#x7C7B;&#x578B;&#x7684;</li>
 </ul>
 </li>
 </ul>
-<h3 id="rdd&#x8F6C;dataframe&#x793A;&#x4F8B;">RDD&#x8F6C;DataFrame&#x793A;&#x4F8B;</h3>
+<h3 id="pandas-dataframe-vs-spark-dataframe">Pandas DataFrame VS Spark DataFrame</h3>
+<p>&#x719F;&#x6089;Python&#x6570;&#x636E;&#x5904;&#x7406;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x80AF;&#x5B9A;&#x5BF9;Pandas&#x5E93;&#x4E0D;&#x964C;&#x751F;&#x3002;Pandas&#x5E93;&#x4E2D;&#x4E5F;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x53EB;&#x505A;DataFrame&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;&#x5B83;&#x8DDF;Spark&#x4E2D;&#x7684;DataFrame&#x6709;&#x4E00;&#x4E9B;&#x7C7B;&#x4F3C;&#x4E4B;&#x5904;&#x3002;&#x4EE5;&#x4E0B;&#x5217;&#x4E3E;&#x4E24;&#x8005;&#x7684;&#x4E00;&#x4E9B;&#x5DEE;&#x522B;&#xFF1A;</p>
 <ul>
-<li>&#x5173;&#x6CE8;&#xFF1A;StructType()&#xFF0C;StructField()</li>
+<li>Immuatable&#xFF1A;Spark&#x4E2D;&#xFF0C;&#x4E00;&#x65E6;RDD&#x3001;DataFrame&#x88AB;&#x521B;&#x5EFA;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x66F4;&#x6539;&#xFF0C;&#x53EA;&#x80FD;&#x901A;&#x8FC7;transformation&#x751F;&#x6210;&#x65B0;&#x7684;RDD&#x3001;DataFrame</li>
+<li>Lazy Evaluations&#xFF1A;Spark&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;RDD&#x548C;DataFrame&#xFF0C;&#x53EA;&#x6709;action&#x624D;&#x4F1A;&#x89E6;&#x53D1;Transformation&#x7684;&#x6267;&#x884C;</li>
+<li>Distributed&#xFF1A;Spark&#x4E2D;&#xFF0C;DataFrame&#x548C;RDD&#x4E00;&#x6837;&#x90FD;&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7684;</li>
+<li>Pandas rich API&#xFF1A;&#x6BD4;Spark SQL api&#x4E30;&#x5BCC;</li>
 </ul>
-<h3 id="parquet-&#x662F;spark&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x5217;&#x5F0F;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x683C;&#x5F0F;">parquet: &#x662F;Spark&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x5217;&#x5F0F;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x683C;&#x5F0F;</h3>
-<h3 id="dataframe&#x7F16;&#x7A0B;&#x652F;&#x6301;2&#x79CD;&#x98CE;&#x683C;">DataFrame&#x7F16;&#x7A0B;&#x652F;&#x6301;2&#x79CD;&#x98CE;&#x683C;</h3>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x7528;&#x60EF;&#x4E86;Pandas&#x7684;Python&#x6570;&#x636E;&#x5F00;&#x53D1;&#x8005;&#x4F7F;&#x7528;Spark&#x3002;Spark&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x5957;&#x548C;Pandas&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x7684;API&#xFF0C;&#x53EB;&#x505A;Pandas on Spark&#x3002;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x6309;&#x7167;&#x4F7F;&#x7528;Pandas&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x4F7F;&#x7528;Spark&#x3002;</p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> pyspark<span class="token punctuation">.</span>pandas <span class="token keyword">as</span> ps
+</code></pre>
+<h3 id="&#x7A0B;&#x5E8F;&#x5165;&#x53E3;">&#x7A0B;&#x5E8F;&#x5165;&#x53E3;</h3>
+<p>&#x5728;RDD&#x9636;&#x6BB5;&#xFF0C;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x5165;&#x53E3;&#x5BF9;&#x8C61;&#x662F;&#xFF1A;<code>SparkContext</code>&#x3002;</p>
+<p>&#x5728;Spark 2.0&#x540E;&#xFF0C;&#x63A8;&#x51FA;&#x4E86;<code>SparkSession</code>&#x5BF9;&#x8C61;&#xFF0C;&#x4F5C;&#x4E3A;Spark&#x7F16;&#x7801;&#x7684;&#x7EDF;&#x4E00;&#x5165;&#x53E3;&#x5BF9;&#x8C61;&#x3002;&#x539F;&#x672C;&#x7684;<code>SparkContext</code>&#x5165;&#x53E3;&#x5BF9;&#x8C61;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>SparkSession</code>&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x3002;</p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">from</span> pyspark<span class="token punctuation">.</span>sql <span class="token keyword">import</span> SparkSession
+
+spark <span class="token operator">=</span> SparkSession<span class="token punctuation">.</span>builder<span class="token punctuation">.</span>appName<span class="token punctuation">(</span><span class="token string">&quot;dataframe&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>master<span class="token punctuation">(</span><span class="token string">&quot;local[*]&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getOrCreate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sc <span class="token operator">=</span> spark<span class="token punctuation">.</span>sparkContext
+</code></pre>
+<h3 id="dataframe&#x521B;&#x5EFA;">DataFrame&#x521B;&#x5EFA;</h3>
+<pre class="language-"><code class="lang-python"><span class="token comment"># &#x6784;&#x5EFA;DataFrame</span>
+
+rdd <span class="token operator">=</span> sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">&quot;words.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>\
+         flatMap<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span>x<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&apos; &apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>\
+         <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>\
+         reduceByKey<span class="token punctuation">(</span><span class="token keyword">lambda</span> a<span class="token punctuation">,</span> b<span class="token punctuation">:</span> a<span class="token operator">+</span>b<span class="token punctuation">)</span>
+
+<span class="token comment"># &#x4ECE;RDD&#x4E2D;&#x6784;&#x5EFA;DataFrame&#xFF0C;&#x9700;&#x8981;&#x5B9A;&#x4E49;schema</span>
+<span class="token comment"># &#x6570;&#x636E;&#x7C7B;&#x578B;&#x9760;&#x63A8;&#x65AD;</span>
+df1 <span class="token operator">=</span> spark<span class="token punctuation">.</span>createDataFrame<span class="token punctuation">(</span>rdd<span class="token punctuation">,</span> schema<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;word&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;count&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+df1<span class="token punctuation">.</span>printSchema<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df1<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x901A;&#x8FC7;StructType&#x5B9A;&#x4E49;DataFrame&#x7684;Schema</span>
+<span class="token comment"># &#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x7C7B;&#x578B;</span>
+<span class="token keyword">from</span> pyspark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>types <span class="token keyword">import</span> StructType<span class="token punctuation">,</span> StringType<span class="token punctuation">,</span> IntegerType
+schema <span class="token operator">=</span> StructType<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>\
+         add<span class="token punctuation">(</span><span class="token string">&apos;word&apos;</span><span class="token punctuation">,</span> StringType<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nullable<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">.</span>\
+         add<span class="token punctuation">(</span><span class="token string">&apos;count&apos;</span><span class="token punctuation">,</span> IntegerType<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nullable<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+df2 <span class="token operator">=</span> spark<span class="token punctuation">.</span>createDataFrame<span class="token punctuation">(</span>rdd<span class="token punctuation">,</span> schema<span class="token punctuation">)</span>
+df2<span class="token punctuation">.</span>printSchema<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df2<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x5C06;RDD&#x8F6C;&#x4E3A;DataFrame</span>
+<span class="token comment"># &#x6570;&#x636E;&#x7C7B;&#x578B;&#x9760;&#x63A8;&#x65AD;</span>
+df3 <span class="token operator">=</span> rdd<span class="token punctuation">.</span>toDF<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&apos;word&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;count&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+df3<span class="token punctuation">.</span>printSchema<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df3<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x5C06;RDD&#x8F6C;&#x4E3A;DataFrame&#xFF0C;&#x4F20;&#x5165;schema</span>
+<span class="token comment"># &#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x7C7B;&#x578B;</span>
+df4 <span class="token operator">=</span> rdd<span class="token punctuation">.</span>toDF<span class="token punctuation">(</span>schema<span class="token punctuation">)</span>
+df4<span class="token punctuation">.</span>printSchema<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df4<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x5C06;Pandas&#x7684;DataFrame&#x5BF9;&#x8C61;&#xFF0C;&#x8F6C;&#x5316;&#x4E3A;Spark&#x4E2D;&#x7684;DataFrame</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token comment"># &#x5F00;&#x542F;arrow&#x6765;&#x63D0;&#x5347;Python&#x548C;JVM&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x5316;&#x6548;&#x7387;&#xFF08;&#x9700;&#x8981;&#x5B89;&#x88C5;PyArrow&#xFF09;</span>
+spark<span class="token punctuation">.</span>conf<span class="token punctuation">.</span><span class="token builtin">set</span><span class="token punctuation">(</span><span class="token string">&quot;spark.sql.execution.arrow.pyspark.enabled&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;true&quot;</span><span class="token punctuation">)</span>
+pandas_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">&apos;word&apos;</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">&apos;hello&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;world&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;spark&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          <span class="token string">&apos;count&apos;</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+df5 <span class="token operator">=</span> spark<span class="token punctuation">.</span>createDataFrame<span class="token punctuation">(</span>pandas_df<span class="token punctuation">)</span>
+df5<span class="token punctuation">.</span>printSchema<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df5<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x76F4;&#x63A5;&#x901A;&#x8FC7;SparkSession&#x521B;&#x5EFA;</span>
+<span class="token keyword">from</span> pyspark<span class="token punctuation">.</span>sql <span class="token keyword">import</span> Row
+df6 <span class="token operator">=</span> spark<span class="token punctuation">.</span>createDataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span>Row<span class="token punctuation">(</span>word<span class="token operator">=</span><span class="token string">&apos;hello&apos;</span><span class="token punctuation">,</span> count<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                             Row<span class="token punctuation">(</span>word<span class="token operator">=</span><span class="token string">&apos;world&apos;</span><span class="token punctuation">,</span> count<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                             Row<span class="token punctuation">(</span>word<span class="token operator">=</span><span class="token string">&apos;spark&apos;</span><span class="token punctuation">,</span> count<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+df6<span class="token punctuation">.</span>printSchema<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df6<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x76F4;&#x63A5;&#x901A;&#x8FC7;SparkSession&#x521B;&#x5EFA;</span>
+<span class="token comment"># &#x8BBE;&#x7F6E;schema</span>
+df7 <span class="token operator">=</span> spark<span class="token punctuation">.</span>createDataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">&apos;hello&apos;</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                             <span class="token punctuation">(</span><span class="token string">&apos;world&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                             <span class="token punctuation">(</span><span class="token string">&apos;spark&apos;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+            schema<span class="token operator">=</span><span class="token string">&quot;word string, count int&quot;</span><span class="token punctuation">)</span>
+df7<span class="token punctuation">.</span>printSchema<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df7<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x901A;&#x8FC7;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x6784;&#x5EFA;DataFrame</span>
+<span class="token keyword">import</span> os
+<span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token string">&quot;wordcount.csv&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    df1<span class="token punctuation">.</span>write<span class="token punctuation">.</span>csv<span class="token punctuation">(</span><span class="token string">&apos;wordcount.csv&apos;</span><span class="token punctuation">,</span> header<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+spark<span class="token punctuation">.</span>read<span class="token punctuation">.</span>csv<span class="token punctuation">(</span><span class="token string">&apos;wordcount.csv&apos;</span><span class="token punctuation">,</span> header<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token string">&quot;wordcount.parquet&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    df1<span class="token punctuation">.</span>write<span class="token punctuation">.</span>parquet<span class="token punctuation">(</span><span class="token string">&apos;wordcount.parquet&apos;</span><span class="token punctuation">)</span>
+spark<span class="token punctuation">.</span>read<span class="token punctuation">.</span>parquet<span class="token punctuation">(</span><span class="token string">&apos;wordcount.parquet&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span><span class="token string">&quot;wordcount.orc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    df1<span class="token punctuation">.</span>write<span class="token punctuation">.</span>orc<span class="token punctuation">(</span><span class="token string">&apos;wordcount.orc&apos;</span><span class="token punctuation">)</span>
+spark<span class="token punctuation">.</span>read<span class="token punctuation">.</span>orc<span class="token punctuation">(</span><span class="token string">&apos;wordcount.orc&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="dataframe&#x7F16;&#x7A0B;">DataFrame&#x7F16;&#x7A0B;</h3>
+<p>DataFrame&#x7F16;&#x7A0B;&#x652F;&#x6301;2&#x79CD;&#x98CE;&#x683C;&#xFF1A;</p>
 <ul>
 <li>DSL&#x98CE;&#x683C;</li>
-<li><p>SQL&#x98CE;&#x683C;</p>
-<ul>
-<li><p>&#x9700;&#x8981;&#x5C06;DataFrame&#x6CE8;&#x518C;&#x6210;&#x8868;</p>
-<ul>
-<li></li>
+<li>SQL&#x98CE;&#x683C;&#xFF1A;&#x9700;&#x8981;&#x5C06;DataFrame&#x6CE8;&#x518C;&#x6210;&#x8868;</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+<h4 id="dsl&#x98CE;&#x683C;api">DSL&#x98CE;&#x683C;API</h4>
+<pre class="language-"><code class="lang-python">df <span class="token operator">=</span> df1<span class="token punctuation">.</span>select<span class="token punctuation">(</span><span class="token string">&apos;word&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;count&apos;</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>columns<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+
+<span class="token comment"># &#x83B7;&#x53D6;Column&#x5BF9;&#x8C61;</span>
+word <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">&apos;word&apos;</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>word<span class="token punctuation">)</span>
+
+<span class="token comment"># select</span>
+df<span class="token punctuation">.</span>select<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&apos;word&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;count&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># &#x4EE5;&#x4E0B;4&#x884C;&#x90FD;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x6240;&#x9009;&#x5217;&#x7684;&#x6570;&#x636E;</span>
+df<span class="token punctuation">.</span>select<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&apos;word&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>select<span class="token punctuation">(</span><span class="token string">&apos;word&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>select<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">&apos;word&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>select<span class="token punctuation">(</span>df<span class="token punctuation">.</span>word<span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># filter&#x548C;where&#xFF0C;&#x529F;&#x80FD;&#x7B49;&#x4EF7;</span>
+df<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span><span class="token string">&quot;count &gt; 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">&apos;count&apos;</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># df.filter(df.count &gt; 1).show() &#x8FD9;&#x4E2A;&#x4F1A;&#x62A5;&#x9519;</span>
+df<span class="token punctuation">.</span>where<span class="token punctuation">(</span><span class="token string">&quot;count &gt; 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>where<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">&apos;count&apos;</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># groupBy</span>
+df<span class="token punctuation">.</span>groupBy<span class="token punctuation">(</span><span class="token string">&quot;count&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">.</span>groupBy<span class="token punctuation">(</span>df<span class="token punctuation">[</span><span class="token string">&apos;count&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="sql&#x98CE;&#x683C;api&#xFF0C;&#x5373;sparksql">SQL&#x98CE;&#x683C;API&#xFF0C;&#x5373;SparkSQL</h4>
 <h3 id="sparksql&#x4E2D;&#xFF0C;&#x5F53;job&#x4EA7;&#x751F;shuffle&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x5206;&#x533A;&#x6570;&#x4E3A;200&#xFF0C;&#x53EF;&#x80FD;&#x8FC7;&#x591A;&#xFF0C;&#x9700;&#x8981;&#x5408;&#x7406;&#x8BBE;&#x7F6E;">SparkSQL&#x4E2D;&#xFF0C;&#x5F53;Job&#x4EA7;&#x751F;shuffle&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x5206;&#x533A;&#x6570;&#x4E3A;200&#xFF0C;&#x53EF;&#x80FD;&#x8FC7;&#x591A;&#xFF0C;&#x9700;&#x8981;&#x5408;&#x7406;&#x8BBE;&#x7F6E;</h3>
 <ul>
 <li><h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;">&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;</h3>
@@ -1168,6 +1312,7 @@ udf&#x5BF9;&#x8C61;&#xFF1A;&#x8FD4;&#x56DE;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x66
 <li>&#x5355;&#x4F4D;&#x65F6;&#x95F4;&#x91CC;&#x7684;&#x541E;&#x5410;&#x91CF;&#x7565;&#x5927;&#x4E8E;Flink</li>
 </ul>
 <h2 id="spark-mlib">Spark MLib</h2>
+<p>TO DO</p>
 <h2 id="&#x5E38;&#x89C1;&#x95EE;&#x9898;">&#x5E38;&#x89C1;&#x95EE;&#x9898;</h2>
 <h3 id="&#x6570;&#x636E;&#x503E;&#x659C;">&#x6570;&#x636E;&#x503E;&#x659C;</h3>
 <ul>
@@ -1249,7 +1394,7 @@ udf&#x5BF9;&#x8C61;&#xFF1A;&#x8FD4;&#x56DE;&#x503C;&#x5BF9;&#x8C61;&#xFF0C;&#x66
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Spark","level":"1.13","depth":1,"next":{"title":"Flink","level":"1.14","depth":1,"path":"Flink.md","ref":"Flink.md","articles":[]},"previous":{"title":"Kafka","level":"1.12","depth":1,"path":"Kafka.md","ref":"Kafka.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-code","-codeline","-highlight","prism","expandable-chapters","chapter-fold","splitter","back-to-top-button","advanced-emoji","hide-element","insert-logo","custom-favicon","pageview-count","-sharing","sharing-plus","flexible-alerts","katex-new","mygitalk","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{},"styles":{"website":"website.css","ebook":"ebook.css","pdf":"pdf.css","mobi":"ebook.css","epub":"ebook.css"},"katex-new":{},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"pics/logo.ico","theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"mygitalk":{"flipMoveOptions":{},"clientID":"c623ce11cb38fa65e5f0","number":-1,"perPage":10,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","admin":["powerAmore"],"createIssueManually":false,"distractionFreeMode":false,"repo":"DataSciChecklist","owner":"powerAmore","enableHotKey":true,"clientSecret":"09a234dcf2ca63822ea9858aa00245147624e61d","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"all":["douban","facebook","google","twitter","weibo","qq","whatsapp"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"pics/logo.jpeg","style":"background: none; max-height: 30px; min-height: 30px"},"expandable-chapters":{}},"theme":"default","author":"powerlee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据技术与算法Checklist","language":"zh-hans","links":{},"gitbook":"*","description":"大数据技术与算法Checklist"},"file":{"path":"Spark.md","mtime":"2023-01-31T12:47:24.543Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-31T13:40:16.848Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Spark","level":"1.13","depth":1,"next":{"title":"Flink","level":"1.14","depth":1,"path":"Flink.md","ref":"Flink.md","articles":[]},"previous":{"title":"Kafka","level":"1.12","depth":1,"path":"Kafka.md","ref":"Kafka.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-code","-codeline","-highlight","prism","expandable-chapters","chapter-fold","splitter","back-to-top-button","advanced-emoji","hide-element","insert-logo","custom-favicon","pageview-count","-sharing","sharing-plus","flexible-alerts","katex-new","mygitalk","theme-comscore","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{},"styles":{"website":"website.css","ebook":"ebook.css","pdf":"pdf.css","mobi":"ebook.css","epub":"ebook.css"},"katex-new":{},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":"pics/logo.ico","theme-comscore":{},"back-to-top-button":{},"pageview-count":{},"custom-favicon":{},"flexible-alerts":{"style":"callout","note":{"label":"Note","icon":"fa fa-info-circle","className":"info"},"tip":{"label":"Tip","icon":"fa fa-lightbulb-o","className":"tip"},"warning":{"label":"Warning","icon":"fa fa-exclamation-triangle","className":"warning"},"danger":{"label":"Attention","icon":"fa fa-ban","className":"danger"}},"mygitalk":{"flipMoveOptions":{},"clientID":"c623ce11cb38fa65e5f0","number":-1,"perPage":10,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","admin":["powerAmore"],"createIssueManually":false,"distractionFreeMode":false,"repo":"DataSciChecklist","owner":"powerAmore","enableHotKey":true,"clientSecret":"09a234dcf2ca63822ea9858aa00245147624e61d","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"all":["douban","facebook","google","twitter","weibo","qq","whatsapp"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"url":"pics/logo.jpeg","style":"background: none; max-height: 30px; min-height: 30px"},"expandable-chapters":{}},"theme":"default","author":"powerlee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据技术与算法Checklist","language":"zh-hans","links":{},"gitbook":"*","description":"大数据技术与算法Checklist"},"file":{"path":"Spark.md","mtime":"2023-02-01T12:37:34.254Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-01T15:29:10.614Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
